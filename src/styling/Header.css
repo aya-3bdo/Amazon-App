@@ -71,15 +71,16 @@ div.locationText :nth-child(1) span {
 }
 
 div.locationText :nth-child(2) {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #fff;
   font-family: var(--regular-font);
+  font-weight: 600;
 }
 
 /* #######  middle section -- top strip ######## */
 
 .middle-section-top-strip {
-  max-width: 58vw;
+  /* max-width: 60vw; */
 }
 
 .middle-side-search .form-control:focus {
@@ -98,7 +99,7 @@ div.locationText :nth-child(2) {
 }
 
 .left-side-search :hover {
-  border: 3px solid #f90 !important;
+  border: 2.5px solid #f90 !important;
   background: #ccc !important;
 }
 
@@ -115,7 +116,6 @@ div.locationText :nth-child(2) {
   padding: 0.25rem 0.125rem;
   font-family: var(--regular-font);
   height: 85%;
-  
 }
 
 .select-wrapper .fa-caret-down {
@@ -133,6 +133,8 @@ div.locationText :nth-child(2) {
   color: #666;
   font-size: 0.61rem !important;
   font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .select-wrapper select:hover {
@@ -144,20 +146,20 @@ div.locationText :nth-child(2) {
   font-size: 0.7rem;
   font-family: var(--regular-font);
   border-radius: 0;
-  /* min-width: 10vw; */
-  /* max-width: 50vw!important; */
-  width: 58vw;
+  width: 59vw;
   height: 85%;
 }
 
-@media screen and (max-width: 992px){
+@media (max-width: 992px) {
 
- .middle-section-top-strip {
-   max-width: 40vw; 
- }
- .middle-section-top-strip .middle-side-search input  {
-  width: 39vw;
+.navbar.navbar-expand-lg{
+  min-width: 992px;
 }
+  .middle-section-top-strip .middle-side-search  {
+    max-width: 60%;
+    text-indent: 40%;
+  }
+ 
 }
 
 button.nav-search-submit-button {
@@ -202,7 +204,7 @@ button.nav-search-submit-button {
   padding-left: 0.1rem;
 }
 
-.right-section-top-strip dropdown .btn-check:focus + .btn,
+.right-section-top-strip dropdown .btn-check:focus+.btn,
 .btn:focus {
   box-shadow: none !important;
 }
@@ -299,7 +301,7 @@ button.nav-search-submit-button {
   width: 0.9rem;
   height: 1rem;
   -webkit-filter: brightness(1) contrast(1.5) saturate(1.5);
-          filter: brightness(1) contrast(1.5) saturate(1.5);
+  filter: brightness(1) contrast(1.5) saturate(1.5);
   margin-right: 0.4rem;
 }
 
@@ -328,8 +330,9 @@ button.nav-search-submit-button {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #fff;
   position: absolute;
-  top: -46%;
-  right: 21%;
+  top: 78%;
+  right: 0%;
+
 }
 
 .right-section-top-strip .signIn-dropDown-menu .row,
@@ -355,11 +358,7 @@ button.nav-search-submit-button {
   border-left: 2px solid #cccccc46;
 }
 
-.right-section-top-strip
-  .signIn-dropDown-menu
-  .dropdown-menu.show
-  .signIn-btn
-  .btn {
+.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show .signIn-btn .btn {
   border: 1px solid #fcd200;
   background: #ffd814;
   font-size: 0.71rem;
@@ -372,14 +371,10 @@ button.nav-search-submit-button {
   color: #131921 !important;
 }
 
-.right-section-top-strip
-  .signIn-dropDown-menu
-  .dropdown-menu.show
-  .signIn-btn
-  .btn:hover {
+.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show .signIn-btn .btn:hover {
   text-decoration: underline;
   -webkit-text-decoration-color: rgb(176, 55, 55);
-          text-decoration-color: rgb(176, 55, 55);
+  text-decoration-color: rgb(176, 55, 55);
   text-decoration-thickness: 1px;
   padding-bottom: 0.4rem;
 }
@@ -425,7 +420,7 @@ button.nav-search-submit-button {
   height: 1.75rem;
   transform: scaleX(-1);
   -webkit-filter: contrast(5);
-          filter: contrast(5);
+  filter: contrast(5);
 }
 
 .cart-slice div:last-child {
