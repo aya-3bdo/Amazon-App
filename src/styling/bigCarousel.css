@@ -1,0 +1,109 @@
+@import "./amazonEmber-fonts.css";
+@import "./colors.css";
+
+.BgCarousel {
+  z-index: -1;
+  height: 130dvh;
+  min-width: 1400px;
+  
+}
+
+.BgCarousel .carousel-control-next,
+.carousel-control-prev {
+  bottom: 70% !important;
+  opacity: 1;
+}
+
+
+.BgCarousel .firstProductsCarousel {
+  z-index: 5;
+  padding-inline: 1.6%;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  min-width:1200px;
+  position: absolute;
+  top: 32%;
+    left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0!important;
+}
+
+.BgCarousel .carousel{
+  min-height: 100%!important;
+  display: flex ;
+  flex-shrink: 0;
+
+}
+
+
+.BgCarousel .firstProductsCarousel p.card-text,
+.BgCarousel .secondProductsCarousel p.card-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: hsl(180, 6%, 6%);
+  padding-inline: 0.8rem;
+  text-align: left;
+}
+
+.BgCarousel .firstProductsCarousel .card,
+.BgCarousel .secondProductsCarousel .card {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+
+@media (min-width: 1440px) {
+  .BgCarousel {
+    padding-inline: 7% !important;
+  }
+}
+
+
+a {
+  color: var(--links-2);
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+}
+
+a:hover {
+  color: var(--links-2-hover);
+  text-decoration: underline;
+}
+
+/*  secondProductsCarousel slice */
+.BgCarousel .secondProductsCarousel {
+  padding-inline: 1.6%;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  min-width:1200px;
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0!important;
+}
+
+.BgCarousel .secondProductsCarousel .col-3:nth-child(1) .card img {
+  display: block;
+  padding: 0.3rem;
+  width: 50%;
+}
+
+.BgCarousel .secondProductsCarousel .col-3,
+.BgCarousel .firstProductsCarousel  .col-3 {
+  display: flex;
+  flex: 1;
+  position: static;
+  flex-shrink: 0!important;
+}
+
+.BgCarousel .secondProductsCarousel .col-3:nth-child(1) .row1,
+.BgCarousel .secondProductsCarousel .col-3:nth-child(1) .row2 {
+  margin: 0!important;
+  padding: 0!important;
+}

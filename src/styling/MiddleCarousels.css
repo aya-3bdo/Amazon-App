@@ -1,0 +1,120 @@
+@import "./amazonEmber-fonts.css";
+@import "./colors.css";
+
+.middle-carousels-container {
+  min-width: 1400px;
+  cursor: pointer;
+}
+
+.middle-carousels-container .slider-container {
+  background: var(--white-100) !important;
+  overflow-x: scroll !important;
+  padding: 0.7rem 2rem !important;
+}
+
+
+.middle-carousels-container .slider-container .slick-prev,
+.middle-carousels-container .slider-container .slick-next {
+  background: var(--white-100);
+  width: 75px;
+  height: 100px;
+  display: block;
+  z-index: 1;
+  opacity: 0.9;
+  top: 45%;
+  box-shadow: 0 1px 3px #888;
+}
+
+.middle-carousels-container .slider-container .slick-prev{
+  left: -4%;
+}
+
+.middle-carousels-container .slider-container .slick-next {
+  right: -4%;
+}
+
+/*  -----------------  old arrows  ---------------- */
+.middle-carousels-container
+  .slider-container
+  button.slick-arrow
+  .slick-next::before
+  .middle-carousels-container
+  .slider-container
+  button.slick-arrow
+  .slick-prev::before {
+  color: transparent !important;
+}
+
+.middle-carousels-container
+  .slider-container
+  .slick-slider
+  button.slick-arrow.slick-prev::before,
+.middle-carousels-container
+  .slider-container
+  .slick-slider
+  button.slick-arrow.slick-next::before {
+  content: "" !important;
+}
+
+.middle-carousels-container .slider-container .slick-prev:hover,
+.middle-carousels-container .slider-container .slick-prev:focus,
+.middle-carousels-container .slider-container .slick-next:hover,
+.middle-carousels-container .slider-container .slick-next:focus {
+  display: block;
+}
+
+.middle-carousels-container .second-carousel.slider-container .slick-list img{
+  padding-inline: 0.3rem;
+
+}
+
+.middle-carousels-container .first-carousel.slider-container .slick-list img{
+  width: 80%!important;
+}
+
+.middle-carousels-container .first-carousel.slider-container .slick-list .slick-track{
+  display: flex;
+  align-items:  baseline;
+}
+
+.middle-carousels-container .first-carousel.slider-container .slick-list .slick-track .slick-slide{
+  display: flex;
+  flex: 1;
+}
+
+.middle-carousels-container .slider-title{
+	font-size: 1rem;
+	font-family: var(--AmazonEmber_Bd);
+	font-weight: 700;
+}
+
+.middle-carousels-container .slider-title span{
+	color: var(--links-2);
+	font-family: AmazonEmber_Rg!important;
+	font-size: 0.83rem;
+	font-weight: 500;
+}
+
+.middle-carousels-container .slider-title span:hover{
+    color: var(--links-2-hover);
+    text-decoration: underline;
+}
+
+.middle-carousels-container .slider-container span.left-arrow,
+.middle-carousels-container .slider-container span.right-arrow{
+	z-index: 2;
+	font-size: 2.2rem;
+	position: absolute;
+  pointer-events: none;
+}
+
+.middle-carousels-container .slider-container span.left-arrow{
+	top: 39%;
+	left: 0.5%;
+}
+
+.middle-carousels-container .slider-container span.right-arrow{
+  right: 0.5%;
+	top: 39%;
+
+}
