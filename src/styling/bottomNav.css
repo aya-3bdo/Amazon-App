@@ -1,0 +1,25 @@
+/*import  Amazon Ember fonts */
+@import './amazonEmber-fonts.css';
+
+.BottomStrip{
+	background: #232F3E;
+	height: 30%!important;
+	/* min-width: 1920px ; */
+	display: flex;
+	position: static;
+
+}
+
+.BottomStrip .navbar li a{
+	color: hsl(0, 0%, 100%);
+	font-size: 0.799rem;
+	font-family: var(--regular-font);
+  white-space: nowrap;
+}
+
+.BottomStrip .navbar ul > :first-child a{
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+/* #e3e6e6 */
