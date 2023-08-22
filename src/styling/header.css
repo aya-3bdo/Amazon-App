@@ -1,5 +1,7 @@
 .header{
-	max-width: none;
 	margin-inline: 0!important;
 	padding-inline: 0 !important;
+	width: min-content;
+	position: fixed;
+	z-index: 20;
 }

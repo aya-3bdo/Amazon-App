@@ -2,10 +2,11 @@
 	/* width: 100vw; */
 	display: flex;
 	flex-direction: column;
-	/* overflow: hidden; */
+	overflow: auto;
 	max-width: none !important;
 	margin-inline: 0!important;
 	padding-inline: 0 !important;
+	min-height:3000px ;
 	
 }
 

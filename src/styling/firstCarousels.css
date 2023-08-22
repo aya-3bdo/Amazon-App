@@ -1,0 +1,95 @@
+@import "./amazonEmber-fonts.css";
+@import "./colors.css";
+
+.FirstCarousels {
+  min-width: 1400px;
+  overflow: auto;
+  transform: translateY(-21%);
+}
+
+.firstProductsCarousel {
+  /* z-index: 5; */
+  padding-inline: 1.6%;
+  overflow: scroll;
+  display: flex;
+  flex-shrink: 0;
+  min-width: 1200px;
+  margin-bottom: 0 !important;
+}
+
+.firstProductsCarousel p.card-text,
+.secondProductsCarousel p.card-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: hsl(180, 6%, 6%);
+  padding-inline: 0.8rem;
+  text-align: left;
+}
+
+.firstProductsCarousel .card,
+.secondProductsCarousel .card {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding-top: 0.5rem;
+  cursor: pointer !important;
+}
+
+a {
+  color: var(--links-2);
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+}
+
+a:hover {
+  color: var(--links-2-hover);
+  text-decoration: underline;
+}
+
+/*  secondProductsCarousel slice */
+.secondProductsCarousel {
+  padding-inline: 1.6%;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  min-width: 1200px;
+  margin-top: 0 !important;
+}
+
+.secondProductsCarousel .col-3:nth-child(1) .card img {
+  display: block;
+  width: 100%;
+  padding: 0 0.2rem 0.2rem;
+}
+.secondProductsCarousel .col-3:nth-child(1) .card p:not(p.card-text) {
+  font-size: 0.2rem;
+  font-family: var(--AmazonEmber_Rg);
+  font-weight: 400;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.secondProductsCarousel .col-3:nth-child(1) .card .row1 > div,
+.secondProductsCarousel .col-3:nth-child(1) .card .row2 > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-inline: 0.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.secondProductsCarousel .col-3,
+.firstProductsCarousel .col-3 {
+  display: flex;
+  flex: 1;
+  position: static;
+  flex-shrink: 0 !important;
+}
+
+.secondProductsCarousel .col-3:nth-child(1) .row1,
+.secondProductsCarousel .col-3:nth-child(1) .row2 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
