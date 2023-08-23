@@ -4,11 +4,16 @@
 .FirstCarousels {
   min-width: 1400px;
   overflow: auto;
-  transform: translateY(-21%);
+   position: absolute; 
+  bottom: 33%;
+  left: 0;
+  right: 0;
+margin-inline: auto;
+
 }
 
+
 .firstProductsCarousel {
-  /* z-index: 5; */
   padding-inline: 1.6%;
   overflow: scroll;
   display: flex;

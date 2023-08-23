@@ -1,11 +1,17 @@
 @import "./amazonEmber-fonts.css";
 @import "./colors.css";
 
+
 .middle-carousels-container {
   min-width: 1400px;
   cursor: pointer;
-  /* margin-top: 7%; */
+  position: absolute;
+  top: 69%;
+    left: 0;
+  right: 0;
+margin-inline: auto;
 }
+
 
 .middle-carousels-container .slider-container {
   background: var(--white-100) !important;

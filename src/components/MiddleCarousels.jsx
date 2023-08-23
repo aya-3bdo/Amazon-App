@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
 import "/src/styling/MiddleCarousels.css";
+import FirstCarousels from "./FirstCarousels";
 import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
@@ -17,7 +18,10 @@ export default function MiddleCarousels() {
     slidesToScroll: 2,
     autoplay: true,
   };
+
+
   return (
+     
     <div className="middle-carousels-container container-xl">
       {/*  First Carousel */}
       <div className="first-carousel slider-container px-1 position-relative">
@@ -184,6 +188,6 @@ export default function MiddleCarousels() {
           </div>
         </Slider>
       </div>
-    </div>
-  );
+      </div>
+       );
 }

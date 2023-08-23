@@ -1,18 +1,13 @@
 import React from "react";
 import BigCarousel from "./BigCarousel";
-import MiddleCarousels from "./MiddleCarousels";
-import FirstCarousels from "./FirstCarousels";
-
+import MiddleContainer from "./MiddleContainer";
 const Products = () => {
   return (
-    <div className="Products m-0 p-0 position-relative">
+    <div className="Products">
       {/* Big carousel & first 2 Carousels */}
       <BigCarousel />
-      <FirstCarousels/>
-      <MiddleCarousels/>
-      
+      <MiddleContainer/>      
       {/*  Second Carousels */}
-      
 
     </div>
      

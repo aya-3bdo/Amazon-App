@@ -1,10 +1,10 @@
 import React from "react";
 import "../styling/bigCarousel.css";
 
+
 export default function BigCarousel() {
   return (
-      <div className="BgCarousel px-0 mx-auto">
-        {/* Big Carousel */}
+      <div className="BgCarousel px-0 mx-auto postion-relative">
         <div
           id="carousel-control"
           className="carousel slide"
@@ -75,7 +75,7 @@ export default function BigCarousel() {
             ></span>
             <span className="visually-hidden">Next</span>
           </button>
-        </div>
+      </div>
       </div>
     
   );

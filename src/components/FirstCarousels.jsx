@@ -2,7 +2,8 @@ import React from 'react';
 import '../styling/firstCarousels.css';
 export default function FirstCarousels() {
   return (
-    <div className='FirstCarousels'>
+
+    <div className='FirstCarousels '>
 	{/* first carousel slice */}
 
         <div className="firstProductsCarousel container ">
@@ -169,7 +170,9 @@ export default function FirstCarousels() {
             </div>
           </div>
         </div>
-        
     </div>
+    
+        
+    
   )
 }
