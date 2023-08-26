@@ -1,0 +1,367 @@
+@import "./amazonEmber-fonts.css";
+@import "./colors.css";
+
+.footer{
+  position: relative;
+  top: 35px;
+}
+
+div.footer-container div,
+ul,
+li,
+span,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: var(--regular-font);
+}
+
+div.footer-container {
+  min-height: 70dvh;
+  min-width: 1200px;
+  /* overflow-x: scroll; */
+}
+div.footer-container section ul li {
+  list-style: none;
+  /* display: flex; */
+  /* flex: 1; */
+  font-size: 12px;
+  line-height: 0.3rem;
+}
+
+div.footer-container section ul li:first-child {
+  color: var(--white-text-90);
+  font-size: 0.9rem;
+  font-family: var(--bold-font);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+div.footer-container section a {
+  color: var(--white-text-90);
+  font-size: 14px;
+}
+
+div.footer-container section a:hover {
+  color: var(--white-text-90);
+}
+
+/*  -------------------- First section -------------------- */
+div.footer-container section.fir-section {
+  height: 60%;
+  width: 100%;
+  background: var(--darkBlue-navbar);
+}
+div.footer-container section.fir-section .second-row.row {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  min-width: 10px;
+}
+
+div.footer-container section.fir-section .second-row.row .col-3 {
+  /* padding-inline: 10px; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* margin-inline: auto!important; */
+  text-align: center;
+
+}
+
+div.footer-container section.fir-section div.first-row {
+  background: var(--lightDarkBlue-navbar);
+  padding: 0.4rem 0;
+  color: var(--white-text-90);
+}
+
+div.footer-container section.fir-section div.first-row a {
+  font-size: 0.5rem !important;
+  font-family: var(--bold-font);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.footer-container .fir-section .Footer-section {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+div.footer-container .fir-section .third-row {
+  width: 100%;
+}
+
+div.footer-container .fir-section .Footer-divider{
+  border-top: 1px solid #3a4553;
+  margin-top: 40px;
+}
+/*    */
+div.footer-container .fir-section .third-row .nav-logo-base {
+  background-image: url(/src/assets/imgs/AmazoneFooterLogo.png);
+  background-position: -10px -90px;
+  width: 76px;
+  height: 23px;
+  margin: 0 auto ;
+  position: absolute;
+  right: -25px;
+  bottom: -10px;
+  
+}
+
+.footer-lang-slice button,
+.footer-lang-slice button:hover {
+  color: var(--white-text-90);
+}
+
+.footer-lang-slice #globe-lang {
+  font-size: 14px;
+}
+
+.footer-lang-slice span.lang {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white-text-80);
+}
+
+#globe-lang > * {
+  font-size: 15px !important;
+  font-family: var(--regular-font);
+  font-weight: 600;
+  color: var(--white-text-90);
+  padding-left: 0.1rem;
+  margin-bottom: 2px;
+}
+
+
+.footer-lang-slice dropdown .btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.footer-lang-slice .lang-slice .dropdown .btn.dropdown-toggle {
+  padding: 4px 0 2.5px 3px;
+  font-size: 0.7rem;
+}
+
+.footer-lang-slice .dropdown-menu[data-bs-popper] {
+  top: 170%;
+  left: -3.1rem;
+  margin-top: 0.125rem;
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-top-color: #fff;
+}
+
+#dropDown-arrow {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  top: -62%;
+  left: 22%;
+}
+
+.footer-lang-slice input {
+  display: none;
+}
+
+.footer-lang-slice .dropdown-menu li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.5rem 0.2rem;
+}
+
+.footer-lang-slice .dropdown-menu .dropdown-divider {
+  width: 78%;
+  opacity: 0.5;
+}
+
+.footer-lang-slice .dropdown-menu label:hover {
+  text-decoration: underline;
+  color: #f6883e !important;
+}
+
+.footer-lang-slice .dropdown-menu {
+  width: 13rem;
+  height: 12.5rem;
+}
+
+.footer-lang-slice .dropdown-menu .check-circle {
+  display: block;
+  border: 1px solid #666 !important;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  position: relative;
+}
+
+.footer-lang-slice .dropdown-menu .check-circle:hover:after {
+  content: "";
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  display: block;
+  background-color: #e87121 !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.footer-lang-slice .dropdown-menu label {
+  cursor: pointer;
+  color: #444 !important;
+  font-family: var(--regular-font);
+  font-size: 0.65rem;
+  line-height: 1.5rem;
+}
+
+.footer-lang-slice .dropdown-menu a,
+.footer-lang-slice .dropdown-menu a:hover {
+  font-size: 0.7rem;
+  color: #0066c0;
+}
+
+.footer-lang-slice .dropdown-menu a:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--links-1-hover) !important;
+}
+
+#dropDown-img {
+  width: 0.9rem;
+  height: 1rem;
+  -webkit-filter: brightness(1) contrast(1.5) saturate(1.5);
+  filter: brightness(1) contrast(1.5) saturate(1.5);
+  margin-right: 0.4rem;
+}
+
+.footer-lang-slice .dropdown-menu li:last-of-type {
+  font-size: 0.68rem;
+  text-transform: lowercase;
+}
+
+.footer-lang-slice .dropdown-menu li:last-of-type a {
+  margin-top: 0.68rem;
+}
+
+.footer-lang-slice .dropdown button#dropdownMenuButton1{
+  color:hsla(0, 0%, 87%, 0.349);
+  font-size: 15px;
+}
+
+.footer-lang-slice .dropdown{
+    bottom: -5px;
+    left: 14px;
+}
+
+
+.footer-lang-slice ul.dropdown-menu{
+ transform: translate(0,0)!important;
+ position: absolute!important;
+ top: 115%!important;
+ left: -125%!important;
+}
+
+#top-arrow{
+  font-size: 20px;
+  color:hsla(0, 0%, 87%, 0.349);
+  position: absolute;
+  bottom: 7px;
+  left: 10px;
+  pointer-events: none;
+}
+
+
+.third-row div.footer-country a > span:first-child {
+  background-image: url(/src/assets/imgs/Egypt-flag.png);
+  background-position: -72px -96px;
+  /* margin: 3px 0 0; */
+top: 1px;
+/* padding: 0 .6em; */
+display: inline-block;
+width: 18px;
+position: relative;
+height: 12px;
+
+} 
+.third-row div.footer-country a > span:nth-child(2){
+  color: var(--white-text-80);
+} 
+.footer-container .third-row .lang-country-container div.select-lang div.footer-lang-slice{
+/* .footer-container .third-row .lang-country-container div.footer-country > a{ */
+  border: 1px solid hsl(210, 2%, 53%);
+    margin: 0!important;
+  padding: 0!important;
+  padding: 4px 0.45rem!important;
+  border-radius: 2px;
+}
+.footer-container .third-row .lang-country-container div.footer-country > a {
+    margin: 0!important;
+  padding: 0!important;
+  padding: 1px 1.2rem!important;
+  border: 1px solid hsl(210, 2%, 53%);
+  border-radius: 2px;
+  text-decoration: none;
+
+}
+
+
+/*  -------------------- Second section -------------------- */
+div.footer-container section.second-section {
+  /* height: 100%; */
+  width: 100%;
+  background: var(--black-navbar);
+  color: whitesmoke;
+  font-size: 12px;
+  font-family: var(--regular-font);
+}
+
+div.footer-container section.second-section a,
+div.footer-container section.second-section span{
+  /* margin: 0!important; */
+  /* padding: 0!important; */
+  line-height: 18px;
+}
+
+
+
+div.footer-container section.second-section .container div.row a.col-2 span,
+div.footer-container section.second-section .container div.row  a.col-2 span {
+  text-align: left;
+
+}
+div.footer-container section.second-section .container div.row a.col-2,
+div.footer-container section.second-section .container div.row a.col-2 {
+    margin-inline: 0.5rem!important;
+    text-align: start!important;
+ 
+}
+div.footer-container section.second-section .container div.row a.col-2 span:not(span:first-child){
+  color: var(--white-text-60);
+  font-size: 14px;
+}
+
+
+div.footer-container section.second-section .container div.row a.col-2 > span:first-child,
+div.footer-container section.second-section .container div.row a.col-2 > span:first-child{
+  font-size: 17px;
+  color: var(--white-text-80);
+  font-weight: 600!important;
+  /* color:#e87121 */
+}
+
+div.footer-container section.second-section .container div.row a.col-2 > span:first-child{
+  display: block;
+}
+
+div.footer-container section.second-section .container >  div.last-div{
+  color: var(--white-text-90);
+  padding: 1rem 0;
+
+}

@@ -4,6 +4,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
+const style = {
+  minHeight: '2460px',
+}
+
 const RootLayout = () => {
   return (
     <div className="rootLayout">
@@ -11,7 +15,7 @@ const RootLayout = () => {
       <div className="header">
       <Header />
       </div>
-      <div className="outlet">
+      <div style={style} className="outlet">
         <Outlet/>
       </div>
        <div className="footer">

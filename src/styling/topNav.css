@@ -159,6 +159,7 @@ button.nav-search-submit-button {
 /* #######  right section -- top strip ######## */
 
 /* lang-slice */
+
 #flag-img img {
   width: 1.2rem !important;
   height: 1.2rem !important;
@@ -166,6 +167,7 @@ button.nav-search-submit-button {
   filter: saturate(20) contrast(3) brightness(2);
   margin-right: 3px;
 }
+
 
 .right-section-top-strip button,
 .right-section-top-strip button:hover {
@@ -178,7 +180,7 @@ button.nav-search-submit-button {
   color: #f3f3f3;
 }
 
-#flag-img span {
+.right-section-top-strip #flag-img span {
   font-size: 0.8rem;
   font-family: var(--regular-font);
   font-weight: 600;
@@ -186,7 +188,7 @@ button.nav-search-submit-button {
   padding-left: 0.1rem;
 }
 
-.right-section-top-strip dropdown .btn-check:focus+.btn,
+ .right-section-top-strip dropdown .btn-check:focus+.btn,
 .btn:focus {
   box-shadow: none !important;
 }
@@ -214,7 +216,7 @@ button.nav-search-submit-button {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #fff;
   position: absolute;
-  top: -62%;
+  top: -56%;
   left: 22%;
 }
 
@@ -227,7 +229,7 @@ button.nav-search-submit-button {
   justify-content: start;
   align-items: center;
   cursor: pointer;
-  margin: 0.5rem 0.2rem;
+  margin: 0.3rem 0.2rem 0.2rem; 
 }
 
 .right-section-top-strip .dropdown-menu .dropdown-divider {

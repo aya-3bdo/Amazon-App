@@ -3,7 +3,7 @@ import BigCarousel from "./BigCarousel";
 import MiddleContainer from "./MiddleContainer";
 const Products = () => {
   return (
-    <div className="Products">
+    <div className="Products mb-3">
       {/* Big carousel & first 2 Carousels */}
       <BigCarousel />
       <MiddleContainer/>      

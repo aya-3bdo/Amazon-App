@@ -15,7 +15,7 @@ margin-inline: auto;
 
 .firstProductsCarousel {
   padding-inline: 1.6%;
-  overflow: scroll;
+  /* overflow: scroll; */
   display: flex;
   flex-shrink: 0;
   min-width: 1200px;
@@ -98,3 +98,4 @@ a:hover {
   margin: 0 !important;
   padding: 0 !important;
 }
+
