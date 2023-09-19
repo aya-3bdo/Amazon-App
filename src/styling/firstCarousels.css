@@ -3,7 +3,7 @@
 
 .FirstCarousels {
   min-width: 1400px;
-  overflow: auto;
+padding-inline: 0!important;
    position: absolute; 
   bottom: 33%;
   left: 0;
@@ -14,12 +14,15 @@ margin-inline: auto;
 
 
 .firstProductsCarousel {
-  padding-inline: 1.6%;
+  /* padding-inline: 1.6%; */
   /* overflow: scroll; */
+  width: 1400px;
+padding-inline: 0!important;
   display: flex;
   flex-shrink: 0;
   min-width: 1200px;
   margin-bottom: 0 !important;
+  max-width: 1400px;
 }
 
 .firstProductsCarousel p.card-text,
@@ -31,48 +34,98 @@ margin-inline: auto;
   text-align: left;
 }
 
-.firstProductsCarousel .card,
-.secondProductsCarousel .card {
+.firstProductsCarousel  .row .col-3 .card,
+.secondProductsCarousel .row .col-3 .card {
   display: flex;
-  justify-content: flex-end;
   position: relative;
-  padding-top: 0.5rem;
+  padding-block: 1.15rem 1rem;
   cursor: pointer !important;
+  width: 100%;
+  height: 400px;
+  
 }
 
-a {
+
+
+.firstProductsCarousel .row .col-3 > div.card div.img-container,
+.secondProductsCarousel .row .col-3 > div.card div.img-container:not(#complex){
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  flex-direction: column;
+ 
+}
+
+.firstProductsCarousel .row .col-3 > div.card div.img-container > img,
+.secondProductsCarousel .row .col-3 > div.card div.img-container > img {
+position: absolute;
+left: 0;
+right: 0;
+top: -10%;
+max-width: 95%;
+object-fit: contain;
+}
+
+.firstProductsCarousel  .row .col-3 .card  a,
+.secondProductsCarousel .row .col-3 .card  a{
   color: var(--links-2);
   text-transform: capitalize;
   font-size: 0.7rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
+ display: block;
 }
 
-a:hover {
+
+.firstProductsCarousel  .row .col-3 .card  a,
+.secondProductsCarousel  .row .col-3 .card  a:not(a:first-of-type){
+ position: absolute;
+ left: 1%;
+ bottom: -2%;
+}
+
+.firstProductsCarousel  .row .col-3 .card  a:hover,
+.secondProductsCarousel .row .col-3 .card  a:hover{
   color: var(--links-2-hover);
   text-decoration: underline;
 }
 
-/*  secondProductsCarousel slice */
+/* ****************   secondProductsCarousel slice   ****************  */
 .secondProductsCarousel {
-  padding-inline: 1.6%;
-  overflow: hidden;
+padding-inline: 0!important;
+  /* overflow: hidden; */
   display: flex;
   flex-shrink: 0;
   min-width: 1200px;
   margin-top: 0 !important;
+    width: 1400px;
+  max-width: 1400px;
 }
 
+
 .secondProductsCarousel .col-3:nth-child(1) .card img {
-  display: block;
-  width: 100%;
-  padding: 0 0.2rem 0.2rem;
+  width: 93%;
+  padding: 0 0.2rem 4px;
+}
+
+.secondProductsCarousel .col-3:nth-child(1) .card{
+  /* background: lightcoral; */
+  padding-left: 0!important;
+}
+
+.secondProductsCarousel .col-3:nth-child(1) .card p.card-text{ 
+ padding-left: 35px;
 }
 .secondProductsCarousel .col-3:nth-child(1) .card p:not(p.card-text) {
-  font-size: 0.2rem;
+  font-size: 0.5rem;
   font-family: var(--AmazonEmber_Rg);
   font-weight: 400;
-  line-height: 1rem;
   text-align: center;
+  max-height: 2em;
+  line-height: 18px;
+  width: 90%;
+
 }
 
 .secondProductsCarousel .col-3:nth-child(1) .card .row1 > div,
@@ -83,14 +136,18 @@ a:hover {
   margin-inline: 0.4rem;
   margin: 0;
   padding: 0;
+  /* border: 1px solid black; */
 }
 
-.secondProductsCarousel .col-3,
-.firstProductsCarousel .col-3 {
+.secondProductsCarousel .col-3:nth-child(1) .card .row1 > div{
+  padding-top: 10px;
+}
+.secondProductsCarousel .row .col-3,
+.firstProductsCarousel  .row .col-3 {
   display: flex;
   flex: 1;
-  position: static;
   flex-shrink: 0 !important;
+  /* border: 2px solid black; */
 }
 
 .secondProductsCarousel .col-3:nth-child(1) .row1,
@@ -99,3 +156,31 @@ a:hover {
   padding: 0 !important;
 }
 
+.secondProductsCarousel .row .col-3:nth-child(1) div.img-container#complex{
+    height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  flex-direction: column;
+  /* background: #aa7d7d; */
+  padding-bottom: 38px;
+  margin-bottom: 0!important;
+  position: absolute;
+  top: 30%;
+  padding-inline: 0.82rem 0.7rem;
+} 
+
+.secondProductsCarousel .col-3:nth-child(1) div.pt-2 {
+  position: absolute;
+  bottom: 5.4%;
+  left: 7%;
+  white-space: nowrap;
+}
+
+
+.firstProductsCarousel .col-3 .card div:last-child,
+.secondProductsCarousel .col-3 .card div:last-child{
+  margin-top: auto;
+  /* position: absolute; */
+}

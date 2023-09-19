@@ -6,13 +6,13 @@ import { MdOutlineArrowDropUp } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="footer-container d-flex flex-column">
       <section className="fir-section">
         <div className="first-row text-center">
-          <Link>Back to top</Link>
+          <Link id="backToTop">Back to top</Link>
         </div>
         <div className="container mx-auto">
-          <div className="second-row row pt-4 mx-auto mt-4">
+          <div className="second-row row pt-3 mx-auto mt-3">
             <div className="col-3">
               <ul className="list">
                 <li>Get to Know Us</li>
@@ -81,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="Footer-divider"></div>
-        <div className="third-row mx-auto py-4 d-flex justify-content-center align-items-center">
+        <div className="third-row mx-auto d-flex justify-content-center align-items-center">
           <Link className=" position-relative">
             <div className="nav-logo-base me-5"></div>
           </Link>
@@ -202,7 +202,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="container mx-auto my-4">
+        <div className="container mx-auto my-3">
           <div className="row mb-3">
             <Link className="col-2">
               <span className="d-block">Audible</span>

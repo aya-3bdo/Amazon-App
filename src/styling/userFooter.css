@@ -1,0 +1,51 @@
+@import url(../styling/amazonEmber-fonts.css);
+@import url(../styling/colors.css);
+
+/* ---------------   ######### ** // **  #########  ** // **  #########  ** // **  #########  ** // **  #########   ------------- */
+
+.user-footer{
+	background: linear-gradient(to bottom,hsla(0, 0%, 0%, 0.17),hsla(0, 0%, 0%, 0.020) 4px, transparent);
+	max-height: 25%;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	font-family: var(--regular-font);
+	z-index: 1;
+}
+
+.user-footer::after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 17px;
+	position: absolute;
+	top: -1%;
+	background: linear-gradient(to left,hsla(0, 0%, 100%),hsla(0, 0%, 100%, 0),hsla(0, 0%, 100%));
+	z-index: 2;
+}
+
+.user-footer > div:first-child{
+	display: flex;
+	justify-content: center;
+	margin-top: 1.45%;
+
+}
+.user-footer > div:first-child a{
+	color: var(--links-3);	
+	margin-inline: 14px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.user-footer > div:first-child :hover{
+	color: var(--links-2-hover);
+}
+
+.user-footer > div:last-child{
+	color: var(--black-text-90);
+	text-align: center;
+	font-size: 12px;
+	margin-top: 0.8rem;
+}

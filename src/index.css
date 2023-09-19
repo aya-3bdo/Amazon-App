@@ -7,6 +7,7 @@
   box-sizing: border-box;
   color-scheme: light dark;
   font-synthesis: none;
+  font-size-adjust: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,7 +22,8 @@ body {
   /* min-height: 100vh; */
   /* width: 100vw; */
   /* height: 100%; */
-  background: #e3e6e6!important;
+	background: #ffffff;
+
   /* overflow: scroll; */
 }
 

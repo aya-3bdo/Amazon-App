@@ -1,16 +1,17 @@
 /* import fonts */
 @import './amazonEmber-fonts.css';
-
+@import url(../styling/colors.css);
 .TopStrip{
   background-color: #131921;
   color: #ffffff;
 	position: static;
-
+  transition: all 0.2s!important;
 
 }
 
 .TopStrip .navbar{
-  padding-bottom: 0.25rem !important;
+  padding-bottom: 0.13rem !important;
+  padding-top: 0.22rem;
 }
 /* #######  left section -- top strip ######## */
 
@@ -54,8 +55,8 @@ div.locationText :nth-child(1) span {
 div.locationText :nth-child(2) {
   font-size: 0.7rem;
   color: #fff;
-  font-family: var(--regular-font);
-  font-weight: 600;
+  font-family: var(--bold-font);
+  font-weight: 800;
 }
 
 /* #######  middle section -- top strip ######## */
@@ -153,9 +154,14 @@ button.nav-search-submit-button {
   border-bottom-right-radius: 0.3rem;
   border: none;
   height: 85%;
-  padding-bottom: 8px !important;
+    display: flex;
+ align-items: center; 
+    padding: 12px 0;
 }
 
+.right-side-search button.nav-search-submit-button:hover {
+  background: #f3a847!important;
+}
 /* #######  right section -- top strip ######## */
 
 /* lang-slice */
@@ -354,6 +360,10 @@ button.nav-search-submit-button {
   box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
   border-radius: 8px;
   font-weight: 500;
+
+}
+
+.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show .signIn-btn .btn a{
   color: #131921 !important;
 }
 
@@ -365,9 +375,11 @@ button.nav-search-submit-button {
   padding-bottom: 0.4rem;
 }
 
-.sign-in-slice .row ul li:hover:not(.list-header),
-.sign-in-slice .row .left-side div:hover {
-  text-decoration: underline;
+.sign-in-slice .row ul li:hover:not(.list-header):hover,
+.sign-in-slice .row .left-side div:hover,
+.sign-in-slice .signIn-dropDown-menu a:hover
+ {
+  text-decoration: underline!important;
   color: #f6883e!important;
 }
 
@@ -390,6 +402,10 @@ button.nav-search-submit-button {
   padding-left: 0.3rem;
   color: #a7acb2 !important;
   font-size: 0.74rem;
+}
+
+.sign-in-slice .signIn-dropDown-menu a{
+  color: var(--links-3);
 }
 
 /* orders slice  */

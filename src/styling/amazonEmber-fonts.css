@@ -3,7 +3,6 @@
 @font-face {
   font-family: "AmazonEmber_Bd";
   src: url(/src/assets/fonts/emberFont/AmazonEmber_Bd.ttf) format("truetype");
-  font-weight: bold;
 }
 
 @font-face {

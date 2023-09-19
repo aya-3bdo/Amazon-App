@@ -1,0 +1,170 @@
+@import url(../styling/amazonEmber-fonts.css);
+@import url(../styling/colors.css);
+
+/* ---------------   ######### ** // **  #########  ** // **  #########  ** // **  #########  ** // **  #########   ------------- */
+
+.signin-parent{
+	margin: 0;
+	padding: 0;
+	color: #111;
+	font-family: var(--regular-font);	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 562px;
+}
+
+.signin-parent .signin-logo-container > a {
+	background-image: url(../assets/imgs/amazon-logo-black.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-position:-5px -130px;
+	width: 110px;
+	height: 30px;
+	margin: 28px 0 16px ;
+}
+
+.signin-parent .form-container{
+	display: block;
+border-radius: 4px;
+border: 1px #ddd solid;
+background-color: #fff;
+padding: 24px 30px 20px ;
+}
+
+.signin-parent .form-container form input{
+	display: block;
+	width: 100%;
+}
+
+
+.signin-parent .form-container form input:first-of-type{
+background-color: #F7FEFF;
+border-color: #007185;
+border: 1px solid #a6a6a6;
+border-radius: 3px;
+outline: 0;
+background: transparent;
+margin-top: 2px;
+}
+
+.signin-parent .form-container form input:first-of-type:focus{
+box-shadow: 0 0 0 3px #c8f3fa,0 1px 2px rgba(15,17,17,.15) inset;
+
+}
+
+.signin-parent .form-container form input:nth-child(3){
+background: #FFD814;
+border: 1px solid #FCD200;
+color: var(--black-text-100);
+border-radius: 8px;
+box-shadow: 0 2px 5px 0 hsla(180, 5%, 84%, 0.5);
+outline: 0;
+cursor: pointer;
+margin: 12px 0 18px ;
+padding: 4px 4px;
+font-size: 17px;
+}
+
+.signin-parent .form-container form input:nth-child(3):hover{
+	background: hsl(49, 100%, 48%);
+border: 1px solid hsl(48, 100%, 47%);
+}
+
+.signin-parent .form-container h2{
+	margin: 0;
+	font-size: 1.4rem;
+	margin-bottom: 8px;
+}
+
+.signin-parent .form-container form label{
+	font-size: 17px;
+	font-weight: 900!important;
+	font-family: var(--font-bold);
+	color: #111;
+	
+	
+}
+
+.signin-parent .form-container div.terms{
+	font-size: 12px;
+}
+
+.signin-parent .form-container div.terms span:nth-child(2){
+	display: block;
+	margin-bottom: 16px;
+
+}
+
+.signin-parent .form-container div.terms a{
+	color: var(--links-3);
+}
+.signin-parent .form-container div.terms a:hover{
+	color: var(--links-2-hover);
+}
+
+.signin-parent .form-container div.terms span#right-arrow{
+	font-size: 20px;
+	vertical-align: bottom;
+	color: var(--black-text-90);
+}
+
+.signin-parent .signin-divider{
+	color: var(--black-text-90);
+	font-size: 14px;
+	margin-top: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	width: 100%;
+margin-bottom: 12px;
+
+
+
+}
+.signin-parent div.signin-divider span:nth-child(2){
+	white-space: nowrap;
+	margin-inline: 10px;
+	
+}
+
+.signin-parent div.signin-divider span:not(span:nth-child(2)){
+	border-top: 1px solid var(--white-text-90);
+	display: inline-block;
+	width: 6%;
+	border-radius: 8px;
+box-shadow: 0 2px 5px 0 rgba(213,217,217,.5);
+}
+
+.signin-parent .createAccount {
+	min-width: 19.3%;
+	
+}
+
+.signin-parent .createAccount a:hover{
+background: #F7FAFA;
+ border: 1px solid  #D5D9D9;
+border-radius: 8px;
+transition: background, 0.2s;
+/* outline: none; */
+}
+
+.signin-parent .createAccount a:focus{
+box-shadow: 0 4px 5px 0 hsla(180, 5%, 84%, 0.5);
+}
+
+.signin-parent .createAccount a{
+border-radius: 8px;
+color: #111;
+  background: #FFF;
+  border: 1px solid #D5D9D9;
+  min-width: 100%;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: var(--regular-font);
+
+}

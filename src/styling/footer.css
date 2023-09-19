@@ -2,8 +2,11 @@
 @import "./colors.css";
 
 .footer{
-  position: relative;
-  top: 35px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
 }
 
 div.footer-container div,
@@ -17,30 +20,36 @@ a {
 }
 
 div.footer-container {
-  min-height: 70dvh;
+  max-height: 66dvh;
   min-width: 1200px;
+  height: 100%;
   /* overflow-x: scroll; */
 }
+
+div.footer-container section.fir-section > div.container{
+  width: 53%;
+  min-width: 920px;
+}
+
 div.footer-container section ul li {
   list-style: none;
-  /* display: flex; */
-  /* flex: 1; */
   font-size: 12px;
-  line-height: 0.3rem;
+  line-height: 5px;
 }
 
 div.footer-container section ul li:first-child {
   color: var(--white-text-90);
-  font-size: 0.9rem;
+  font-size: 0.89rem;
   font-family: var(--bold-font);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   white-space: nowrap;
 }
 
-div.footer-container section a {
+div.footer-container section a:not(#backToTop) {
   color: var(--white-text-90);
-  font-size: 14px;
+  font-size: 10px;
+  line-height: 26px;
 }
 
 div.footer-container section a:hover {
@@ -49,24 +58,24 @@ div.footer-container section a:hover {
 
 /*  -------------------- First section -------------------- */
 div.footer-container section.fir-section {
-  height: 60%;
+  max-height: 50%;
   width: 100%;
   background: var(--darkBlue-navbar);
 }
+
 div.footer-container section.fir-section .second-row.row {
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
-  min-width: 10px;
+  width: 70%;
+ min-width: 100%;
 }
 
 div.footer-container section.fir-section .second-row.row .col-3 {
-  /* padding-inline: 10px; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* margin-inline: auto!important; */
-  text-align: center;
+  text-align: left;
+  display: flex;
+  justify-content: center;
 
+}
+div.footer-container section.fir-section .second-row.row .col-3:nth-child(4) {
+  justify-content: flex-end;
 }
 
 div.footer-container section.fir-section div.first-row {
@@ -75,11 +84,12 @@ div.footer-container section.fir-section div.first-row {
   color: var(--white-text-90);
 }
 
-div.footer-container section.fir-section div.first-row a {
-  font-size: 0.5rem !important;
+div.footer-container section.fir-section div.first-row.text-center > #backToTop {
+  font-size: 0.8rem !important;
   font-family: var(--bold-font);
-  font-weight: 400;
+  font-weight: 600;
   text-transform: none;
+  color: var(--white-text-90);
 }
 
 .footer-container .fir-section .Footer-section {
@@ -89,11 +99,12 @@ div.footer-container section.fir-section div.first-row a {
 
 div.footer-container .fir-section .third-row {
   width: 100%;
+  padding-block: 24px 8px;
 }
 
 div.footer-container .fir-section .Footer-divider{
   border-top: 1px solid #3a4553;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 /*    */
 div.footer-container .fir-section .third-row .nav-logo-base {
@@ -298,7 +309,7 @@ height: 12px;
   border: 1px solid hsl(210, 2%, 53%);
     margin: 0!important;
   padding: 0!important;
-  padding: 4px 0.45rem!important;
+  padding: 2px 0.45rem !important;
   border-radius: 2px;
 }
 .footer-container .third-row .lang-country-container div.footer-country > a {
@@ -314,7 +325,6 @@ height: 12px;
 
 /*  -------------------- Second section -------------------- */
 div.footer-container section.second-section {
-  /* height: 100%; */
   width: 100%;
   background: var(--black-navbar);
   color: whitesmoke;
@@ -322,11 +332,17 @@ div.footer-container section.second-section {
   font-family: var(--regular-font);
 }
 
+div.footer-container section.second-section > div.container{
+  width: 60%!important;
+  min-width: 1020px;
+  position: relative;
+  left: 6%;
+}
+
 div.footer-container section.second-section a,
 div.footer-container section.second-section span{
-  /* margin: 0!important; */
-  /* padding: 0!important; */
-  line-height: 18px;
+  line-height: 16px;
+  
 }
 
 
@@ -334,26 +350,31 @@ div.footer-container section.second-section span{
 div.footer-container section.second-section .container div.row a.col-2 span,
 div.footer-container section.second-section .container div.row  a.col-2 span {
   text-align: left;
-
 }
-div.footer-container section.second-section .container div.row a.col-2,
+
 div.footer-container section.second-section .container div.row a.col-2 {
-    margin-inline: 0.5rem!important;
+    margin-right: 0.5rem!important;
     text-align: start!important;
- 
+    line-height: 14px!important;
+    padding-inline: 0.5rem;
+    
 }
 div.footer-container section.second-section .container div.row a.col-2 span:not(span:first-child){
   color: var(--white-text-60);
   font-size: 14px;
+
+
 }
+
 
 
 div.footer-container section.second-section .container div.row a.col-2 > span:first-child,
 div.footer-container section.second-section .container div.row a.col-2 > span:first-child{
-  font-size: 17px;
-  color: var(--white-text-80);
-  font-weight: 600!important;
-  /* color:#e87121 */
+  font-size: 12px;
+  color: var(--white-text-90);
+  font-weight: 800!important;
+  font-weight: var(--bold-font);
+
 }
 
 div.footer-container section.second-section .container div.row a.col-2 > span:first-child{
@@ -362,6 +383,6 @@ div.footer-container section.second-section .container div.row a.col-2 > span:fi
 
 div.footer-container section.second-section .container >  div.last-div{
   color: var(--white-text-90);
-  padding: 1rem 0;
+  padding: 0.2rem 0 0.8rem;
 
 }

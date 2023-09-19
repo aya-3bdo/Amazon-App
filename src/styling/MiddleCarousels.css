@@ -7,8 +7,8 @@
   cursor: pointer;
   position: absolute;
   top: 69%;
-    left: 0;
-  right: 0;
+    left: 13.3%;
+  right: 13.3%;
 margin-inline: auto;
 font-family: var(AmazonEmber_Rg);
 /* background: var(--white-100); */
@@ -235,8 +235,12 @@ line-height: 1.6rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0.8rem auto;
+  /* margin: 0.8rem auto; */
+  position: absolute;
+  left: -22%;
+  right: -22%;
   padding: 1rem 0;
+  bottom: -10.9%;
 }
 
 .middle-carousels-container div.middleContainer-divider > *{
@@ -250,20 +254,21 @@ line-height: 1.6rem;
 
 .middle-carousels-container div.middleContainer-divider div.Top-divider{
   border-top: 1px solid hsla(0, 0%, 0%, 0.144);
-  width: 98%;
+  /* width: 98%; */
+  width: 92%;
   padding: 1rem;
 }
 
 .middle-carousels-container div.middleContainer-divider div.Bottom-divider{
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.144);
-  width: 98%;
+  /* width: 98%; */
+  width: 100%;
   padding-top: 0.8rem;
 }
 
 .middle-carousels-container div.middleContainer-divider a.button{
     max-width: 230px;
   text-decoration: none;
-  /* margin-bottom: 5px; */
   margin-top: 5px;
   width: 30%;
   display: block;

@@ -1,28 +1,36 @@
 import React from "react";
 import '../styling/rootLayout.css'
-import Header from "./Header";
+import Header from "./Header/Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
-const style = {
-  minHeight: '2460px',
+const outletStyle = {
+  minHeight: '3845px',
+  maxHeight: 'none',
+  height: 'auto',
+  overflowY: 'visible',
+  position: 'relative'
 }
 
 const RootLayout = () => {
   return (
-    <div className="rootLayout">
+    <>
+    <div className="rootLayout position-relative overflow-hidden">
       
       <div className="header">
       <Header />
       </div>
-      <div style={style} className="outlet">
+      <div style={outletStyle} className="outlet">
         <Outlet/>
       </div>
        <div className="footer">
         <Footer />
       </div>
       
-    </div>
+      </div>
+      
+    </>
+      
   );
 };
 
