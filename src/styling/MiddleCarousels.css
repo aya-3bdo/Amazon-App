@@ -240,7 +240,7 @@ line-height: 1.6rem;
   left: -22%;
   right: -22%;
   padding: 1rem 0;
-  bottom: -10.9%;
+  bottom: -10.2%;
 }
 
 .middle-carousels-container div.middleContainer-divider > *{
@@ -290,9 +290,14 @@ text-align: center;
 font-weight: 700;
 text-decoration: none;
 text-shadow: 0 1px 0 #ffe093;
+margin-bottom: 3px;
 }
 
 .middle-carousels-container div.middleContainer-divider a:last-child{
   text-transform: inherit;
   margin-inline-start: 0.1rem;
+}
+
+.middle-carousels-container div.middleContainer-divider a:last-child:hover{
+color: var(--links-1-hover);
 }

@@ -6,7 +6,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-
 }
 
 div.footer-container div,
@@ -25,6 +24,8 @@ div.footer-container {
   height: 100%;
   /* overflow-x: scroll; */
 }
+
+/*  ------------------------------------------- First section ------------------------------------------- */
 
 div.footer-container section.fir-section > div.container{
   width: 53%;
@@ -46,6 +47,10 @@ div.footer-container section ul li:first-child {
   white-space: nowrap;
 }
 
+div.footer-container section ul li a:hover:not(li:first-child a) {
+text-decoration: underline;
+}
+
 div.footer-container section a:not(#backToTop) {
   color: var(--white-text-90);
   font-size: 10px;
@@ -56,7 +61,6 @@ div.footer-container section a:hover {
   color: var(--white-text-90);
 }
 
-/*  -------------------- First section -------------------- */
 div.footer-container section.fir-section {
   max-height: 50%;
   width: 100%;
@@ -102,11 +106,14 @@ div.footer-container .fir-section .third-row {
   padding-block: 24px 8px;
 }
 
+
 div.footer-container .fir-section .Footer-divider{
   border-top: 1px solid #3a4553;
   margin-top: 25px;
 }
-/*    */
+
+/*  -- -- -- -- -- -- -- --  Lang slice  -- -- -- -- -- -- -- --  */
+
 div.footer-container .fir-section .third-row .nav-logo-base {
   background-image: url(/src/assets/imgs/AmazoneFooterLogo.png);
   background-position: -10px -90px;
@@ -124,7 +131,7 @@ div.footer-container .fir-section .third-row .nav-logo-base {
   color: var(--white-text-90);
 }
 
-.footer-lang-slice #globe-lang {
+ #globe-lang {
   font-size: 14px;
 }
 
@@ -143,11 +150,11 @@ div.footer-container .fir-section .third-row .nav-logo-base {
   margin-bottom: 2px;
 }
 
-
 .footer-lang-slice dropdown .btn-check:focus + .btn,
 .btn:focus {
   box-shadow: none !important;
 }
+
 
 .footer-lang-slice .lang-slice .dropdown .btn.dropdown-toggle {
   padding: 4px 0 2.5px 3px;
@@ -160,20 +167,20 @@ div.footer-container .fir-section .third-row .nav-logo-base {
   margin-top: 0.125rem;
   display: flex;
   flex-direction: column;
-  width: 13rem;
+  width: 10rem;
   font-size: 1rem;
   text-transform: capitalize;
   cursor: pointer;
   border-top-color: #fff;
 }
 
-#dropDown-arrow {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
+div.lang-country-container div.select-lang div.footer-lang-slice  #dropDown-arrow {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #fff;
   position: absolute;
-  top: -62%;
-  left: 22%;
+  top: 79% !important;
+  left: 84% !important;
 }
 
 .footer-lang-slice input {
@@ -196,11 +203,6 @@ div.footer-container .fir-section .third-row .nav-logo-base {
 .footer-lang-slice .dropdown-menu label:hover {
   text-decoration: underline;
   color: #f6883e !important;
-}
-
-.footer-lang-slice .dropdown-menu {
-  width: 13rem;
-  height: 12.5rem;
 }
 
 .footer-lang-slice .dropdown-menu .check-circle {
@@ -231,17 +233,18 @@ div.footer-container .fir-section .third-row .nav-logo-base {
   font-family: var(--regular-font);
   font-size: 0.65rem;
   line-height: 1.5rem;
+  font-weight: 500!important;
 }
 
 .footer-lang-slice .dropdown-menu a,
 .footer-lang-slice .dropdown-menu a:hover {
   font-size: 0.7rem;
-  color: #0066c0;
+  color: var(--links-1)!important;
 }
 
 .footer-lang-slice .dropdown-menu a:hover {
   text-decoration: underline !important;
-  text-decoration-color: var(--links-1-hover) !important;
+  text-decoration-color: var(--links-1-hover)!important;
 }
 
 #dropDown-img {
@@ -266,17 +269,23 @@ div.footer-container .fir-section .third-row .nav-logo-base {
   font-size: 15px;
 }
 
+.footer-lang-slice .dropdown-menu {
+  width: 13.7em;
+  height: 11em;
+ 
+}
+
 .footer-lang-slice .dropdown{
-    bottom: -5px;
-    left: 14px;
+ bottom: -4px;
+ left: 16px;
 }
 
 
 .footer-lang-slice ul.dropdown-menu{
- transform: translate(0,0)!important;
+ transform: translateY(-3px)!important;
  position: absolute!important;
- top: 115%!important;
- left: -125%!important;
+ top: 106%!important;
+ left: -258%!important;
 }
 
 #top-arrow{
@@ -292,26 +301,26 @@ div.footer-container .fir-section .third-row .nav-logo-base {
 .third-row div.footer-country a > span:first-child {
   background-image: url(/src/assets/imgs/Egypt-flag.png);
   background-position: -72px -96px;
-  /* margin: 3px 0 0; */
 top: 1px;
-/* padding: 0 .6em; */
 display: inline-block;
 width: 18px;
 position: relative;
 height: 12px;
 
 } 
+
 .third-row div.footer-country a > span:nth-child(2){
   color: var(--white-text-80);
 } 
+
 .footer-container .third-row .lang-country-container div.select-lang div.footer-lang-slice{
-/* .footer-container .third-row .lang-country-container div.footer-country > a{ */
   border: 1px solid hsl(210, 2%, 53%);
     margin: 0!important;
   padding: 0!important;
   padding: 2px 0.45rem !important;
   border-radius: 2px;
 }
+
 .footer-container .third-row .lang-country-container div.footer-country > a {
     margin: 0!important;
   padding: 0!important;
@@ -319,11 +328,10 @@ height: 12px;
   border: 1px solid hsl(210, 2%, 53%);
   border-radius: 2px;
   text-decoration: none;
-
 }
 
 
-/*  -------------------- Second section -------------------- */
+/*   -------------------------------------------  Second section  ------------------------------------------- */
 div.footer-container section.second-section {
   width: 100%;
   background: var(--black-navbar);
@@ -341,15 +349,21 @@ div.footer-container section.second-section > div.container{
 
 div.footer-container section.second-section a,
 div.footer-container section.second-section span{
-  line-height: 16px;
-  
+  line-height: 16px;  
 }
 
+div.footer-container section.second-section .container .row > a:hover,
+div.footer-container section.second-section div.last-div span:hover:not(span#copyright)
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 
 div.footer-container section.second-section .container div.row a.col-2 span,
 div.footer-container section.second-section .container div.row  a.col-2 span {
   text-align: left;
+
 }
 
 div.footer-container section.second-section .container div.row a.col-2 {

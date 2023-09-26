@@ -3,10 +3,9 @@
 
 .BgCarousel {
   z-index: -1;
-  width: 1500px;
-  /* overflow: scroll;  */
+  width: 1450px;
   min-height: 100%;
-  transform: translateY(18.2%);
+  transform: translateY(17.5%);
 
 }
 
@@ -14,6 +13,14 @@
 .BgCarousel .carousel-control-prev {
   bottom: 50% !important;
   opacity: 1;
+}
+
+.BgCarousel .carousel-control-prev{
+  left: -5%;
+}
+
+.BgCarousel .carousel-control-next{
+right: -5%;
 }
 
 /*  Editting the color of main carousel arrows */

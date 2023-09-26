@@ -5,7 +5,6 @@ import "../../styling/topNav.css";
 import {
   HiOutlineLocationMarker,
   HiOutlineSearch,
-  HiOutlineShoppingCart,
 } from "react-icons/hi";
 // import { MdOutlineShoppingCart } from "react-icons/md";
 
@@ -35,9 +34,10 @@ export const TopNav = () => {
         <div className="parent-top-strip  container-fluid mx-1">
           {/*  ** ** ** Left section-- top strip  ** ** ** */}
 
-          <div className="left-section-top-strip d-flex  justify-content-between me-0 me-lg-1">
+          <div className="left-section-top-strip d-flex  justify-content-between ">
+            
             {/* Logo slice */}
-            <div className="navLogo d-flex  justify-content-center pe-2 pt-2 pb-1 ps-1 ">
+            <div className="navLogo d-flex  justify-content-center">
               <NavLink to={'/'} className=" d-block justify-content-center">
                 <img
                   className="navImg"
@@ -48,8 +48,9 @@ export const TopNav = () => {
                 <span>.eg</span>
               </div>
             </div>
+
             {/* Location slice */}
-            <div className="location d-flex pt-2 pb-1 px-0 justify-content-start ">
+            <div className="location d-flex pt-2 pb-1 px-0 ms-2 justify-content-start ">
               <div className="locationIco">
                 <HiOutlineLocationMarker />
               </div>
@@ -63,12 +64,14 @@ export const TopNav = () => {
           </div>
 
           {/*  ** ** ** middle section-- top strip  ** ** ** */}
-
+          {/* <div id="middle-parent"> */}
+            
           <div
-            className="middle-section-top-strip d-flex flex-nowrap justify-content-center 
-          align-self-end pt-1 overflowX-scroll px-2 px-xlg-0"
+            className="middle-section-top-strip  pt-1 px-2 px-xlg-0"
           >
+
             {/* select slice */}
+            
             <div className="left-side-search d-flex border-radius-3">
               <div className="select-wrapper d-flex position-relative">
                 <select
@@ -105,7 +108,8 @@ export const TopNav = () => {
             </div>
 
             {/* search input slice */}
-            <div className="middle-side-search d-flex me-0 w-auto overflow-hidden">
+
+            <div className="middle-side-search d-flex me-0 w-100 overflow-hidden">
               <form className="d-flex search-wrapper">
                 <input
                   className="form-control d-flex "
@@ -115,20 +119,27 @@ export const TopNav = () => {
                 ></input>
               </form>
             </div>
+
             {/* search button slice */}
+
             <div className="right-side-search search-ico d-flex  ms-0 ">
               <button className="nav-search-submit-button px-2 " type="submit">
                 <HiOutlineSearch />
               </button>
             </div>
           </div>
+{/* </div> */}
 
           {/*  ** ** ** right section-- top strip  ** ** ** */}
 
-          <div className="right-section-top-strip d-flex  align-items-end flex-nowrap justify-content-between ">
+          <div className="right-section-top-strip d-flex  align-items-end flex-nowrap  justify-content-between ">
+            
             {/*  Lang slices */}
-            <div className="lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end">
+
+            <div className="lang-slice position-relative d-flex flex-row flex-nowrap align-items-end">
+                    <span id="dropDown-arrow"></span>
               <div id="flag-img">
+
                 <img src="/src/assets/imgs/icons8-egypt-48.png"></img>
               </div>
               <span className="text-uppercase  d-block lang">en</span>
@@ -145,8 +156,7 @@ export const TopNav = () => {
                   className="dropdown-menu m-0 p-0 "
                   aria-labelledby="dropdownMenuButton1"
                 >
-                  <li className="position-relative">
-                    <span id="dropDown-arrow"></span>
+                  <li>
                     <input type="radio" id="ar" name="lang" value="arabic-ar" />
                     <span className="check-circle mx-2"></span>
                     <label htmlFor="ar">
@@ -193,13 +203,13 @@ export const TopNav = () => {
             </div>
 
             {/* Sign in slice */}
-            <div className="sign-in-slice position-relative pt-1 pb-1 ps-1 ">
-              <div className="d-flex signIn-title lh-1 pt-0">
+            <div className="sign-in-slice position-relative ">
+              <div className="d-flex signIn-title pt-0">
                 {" "}
                 <span className="text-capitalize pe-1">hello, </span>sign in
               </div>
               <div className="signIn-dropDown-menu dropdown d-flex flex-nowrap flex-row position-relative">
-                <span className="text-capitalize d-block">account & lists</span>
+                <h6 className="text-capitalize d-block">account & lists</h6>
                 <span id="dropDown-arrow-signIn"></span>
                 <button
                   className="btn  dropdown-toggle d-flex align-self-center  pe-1"
@@ -254,10 +264,12 @@ export const TopNav = () => {
                 </div>
               </div>
             </div>
+
             {/* Orders slice */}
-            <div className="orders-slice px-2 pt-2 pb-1 mx-1">
+            <div className="orders-slice px-2 pt-2 pb-1">
               <span className="text-capitalize">orders</span>
             </div>
+
             {/* Cart slice */}
             <div className="cart-slice d-flex flex-row position relative p-1 ">
               <NavLink to="ShoppingCart" className="text-decoration-none">

@@ -153,8 +153,10 @@ height: 13px;
 
 .create-account-parent .form-container div.terms a{
 	color: var(--links-3);
-	
+	font-size: 0.8rem;
 }
+
+
 .create-account-parent .form-container div.terms a:hover{
 	color: var(--links-2-hover);
 }

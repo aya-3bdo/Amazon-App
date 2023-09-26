@@ -7,10 +7,10 @@ export const BottomNav = () => {
   return (
     <div className="BottomStrip d-flex w-100">
       <nav className="navbar navbar-expand   px-md-0 d-flex justify-content-start text-capitalize flex-nowrap container-fluid py-0">
-        <ul className="navbar-nav ms-3 d-flex ">
+        <ul className="navbar-nav ms-3 d-flex align-items-end ">
           <li className="all d-flex">
             <NavLink className="navbar-brand" to="#">
-              <span className="fs-5 fw-bolder"><HiBars3 /></span> all
+              <h6 className="fs-5 fw-bolder"><HiBars3 /></h6> all
             </NavLink>
           </li>
 

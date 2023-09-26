@@ -88,6 +88,8 @@ const Footer = () => {
           <div className="lang-country-container ms-5 d-flex mb-3">
             <div className="select-lang  me-2">
               <div className=" footer-lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end ">
+                      <span id="dropDown-arrow"></span>
+
                 <div id="globe-lang">
                   <BsGlobe />
                 </div>
@@ -110,7 +112,6 @@ const Footer = () => {
                     aria-labelledby="dropdownMenuButton1"
                   >
                     <li className="position-relative">
-                      <span id="dropDown-arrow"></span>
                       <input
                         type="radio"
                         id="Ar"
@@ -227,8 +228,8 @@ const Footer = () => {
             <span className="me-2 pe-1">
               Privacy Notice
             </span>
-              Interest-Based Ads
-           <span className="d-block"> ©1996&#727;2023, Amazon.com, Inc. or its affiliates</span>
+             <span> Interest-Based Ads</span>
+           <span id="copyright" className="d-block"> ©1996&#727;2023, Amazon.com, Inc. or its affiliates</span>
           </div>
         </div>
       </section>

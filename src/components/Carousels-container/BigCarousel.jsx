@@ -49,8 +49,18 @@ export default function BigCarousel() {
                 className="d-block w-100"
                 alt="..."
               />
-            </div>
           </div>
+          
+            <div className="carousel-item">
+              <img
+                src="/src/assets/imgs/1fir-Carousel_6.jpg"
+                className="d-block w-100"
+                alt="..."
+              />
+          </div>
+
+        </div>
+        
           <button
             className="carousel-control-prev"
             type="button"
