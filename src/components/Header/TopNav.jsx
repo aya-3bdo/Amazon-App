@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../styling/topNav.css";
+import '../../logic/style-manipulation.js';
 
 import {
   HiOutlineLocationMarker,
@@ -11,19 +12,38 @@ import {
 
 export const TopNav = () => {
 
-/*  --- Resize select-menu width according to selected option  --- */
+  /*  --- Resize select-menu width according to selected option  --- */
 
   $(function () {
     $("#option-width").html($("#select-menu option:selected").text());
     $("#select-menu").width($("#select-width").width());
 
-
-    $("#select-menu").on( 'change', function () {
+    $("#select-menu").on('change', function () {
       $("#option-width").html($("#select-menu option:selected").text());
       $(this).width($("#select-width").width()
       );
     });
-  })
+  },
+    
+    // $(".select-wrapper").on("click", () => {
+    //   $(this).css({
+    //     'border': "3px solid #f90",
+    //     " height": "93%",
+    //     ' top': "1%",
+    //     "z-index": "3",
+    //   })
+    // }),
+  
+    
+   
+  
+  );
+
+
+// const signInSlice = document.querySelector('.sign-in-slice ');
+// const signInMenu = document.querySelector('#sign-in-menu');
+
+
 
   return (
     < div className="TopStrip d-flex w-100">
@@ -64,8 +84,7 @@ export const TopNav = () => {
           </div>
 
           {/*  ** ** ** middle section-- top strip  ** ** ** */}
-          {/* <div id="middle-parent"> */}
-            
+
           <div
             className="middle-section-top-strip  pt-1 px-2 px-xlg-0"
           >
@@ -128,7 +147,6 @@ export const TopNav = () => {
               </button>
             </div>
           </div>
-{/* </div> */}
 
           {/*  ** ** ** right section-- top strip  ** ** ** */}
 
@@ -153,6 +171,7 @@ export const TopNav = () => {
                 ></button>
 
                 <ul
+                  id="lang-dropdown"
                   className="dropdown-menu m-0 p-0 "
                   aria-labelledby="dropdownMenuButton1"
                 >
@@ -203,6 +222,7 @@ export const TopNav = () => {
             </div>
 
             {/* Sign in slice */}
+
             <div className="sign-in-slice position-relative ">
               <div className="d-flex signIn-title pt-0">
                 {" "}
@@ -219,6 +239,7 @@ export const TopNav = () => {
                   aria-expanded="false"
                 ></button>
                 <div
+                  id="sign-in-menu"
                   className="dropdown-menu m-0 p-0 "
                   aria-labelledby="dropdownMenuButton1"
                 >
@@ -229,7 +250,7 @@ export const TopNav = () => {
                     <div className="btn  d-flex justify-content-center align-items-center">
                      <NavLink to="/signin"> sign in</NavLink>
                     </div>
-                    <div>
+                    <div className="new-customer">
                       new customer?
                       <NavLink to="/createAccount" className="text-decoration-none ps-1">
                         start here.
@@ -244,12 +265,11 @@ export const TopNav = () => {
                       <span className="d-block">your lists</span>
                       <div className="d-block">
                         {" "}
-                        create
-                        <span className="text-lowercase"> a</span> list
+                        Create a List
                       </div>
                     </div>
                     <div className="col-7 ms-0">
-                      <ul>
+                      <ul >
                         <li className="list-header">your account</li>
                         <li>your account</li>
                         <li>your orders</li>

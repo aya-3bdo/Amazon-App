@@ -5,6 +5,22 @@ import { BsGlobe } from "react-icons/bs";
 import { MdOutlineArrowDropUp } from "react-icons/md";
 
 const Footer = () => {
+
+  $(function () {
+    $(' .select-lang').on('mouseover', () => {
+      $('#footer-dropDown-arrow').show();
+      $('.dropdown-menu ').show();
+  }
+    ),
+    
+      $(' .select-lang').on('mouseleave', () => {
+        $('#footer-dropDown-arrow').hide();
+        $('.dropdown-menu ').hide();
+  }
+      )
+
+  })
+
   return (
     <div className="footer-container d-flex flex-column">
       <section className="fir-section">
@@ -88,7 +104,7 @@ const Footer = () => {
           <div className="lang-country-container ms-5 d-flex mb-3">
             <div className="select-lang  me-2">
               <div className=" footer-lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end ">
-                      <span id="dropDown-arrow"></span>
+                      <span id="footer-dropDown-arrow"></span>
 
                 <div id="globe-lang">
                   <BsGlobe />
@@ -165,7 +181,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="footer-country ms-1   d-flex align-items-center justify-content-start">
+            <div className="footer-country   d-flex align-items-center justify-content-start">
               <Link>
                 <span className="footer-Egy-flag me-2"></span>
                 <span>Egypt</span>

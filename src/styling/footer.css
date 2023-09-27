@@ -106,6 +106,11 @@ div.footer-container .fir-section .third-row {
   padding-block: 24px 8px;
 }
 
+div.footer-container .fir-section .third-row  div.lang-country-container div.select-lang:hover,
+div.footer-container .fir-section .third-row  div.lang-country-container div.footer-country:hover {
+  cursor: pointer;
+}
+
 
 div.footer-container .fir-section .Footer-divider{
   border-top: 1px solid #3a4553;
@@ -174,13 +179,26 @@ div.footer-container .fir-section .third-row .nav-logo-base {
   border-top-color: #fff;
 }
 
-div.lang-country-container div.select-lang div.footer-lang-slice  #dropDown-arrow {
+.footer-lang-slice .dropdown-menu {
+  width: 13.4em;
+  height: 11.2em;
+ 
+}
+
+.footer-lang-slice .dropdown{
+ bottom: -5px;
+ left: 16px;
+}
+
+
+div.lang-country-container div.select-lang div.footer-lang-slice  #footer-dropDown-arrow {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
   border-bottom: 9px solid #fff;
   position: absolute;
   top: 79% !important;
   left: 84% !important;
+  display: none;
 }
 
 .footer-lang-slice input {
@@ -269,16 +287,6 @@ div.lang-country-container div.select-lang div.footer-lang-slice  #dropDown-arro
   font-size: 15px;
 }
 
-.footer-lang-slice .dropdown-menu {
-  width: 13.7em;
-  height: 11em;
- 
-}
-
-.footer-lang-slice .dropdown{
- bottom: -4px;
- left: 16px;
-}
 
 
 .footer-lang-slice ul.dropdown-menu{
