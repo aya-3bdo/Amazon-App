@@ -6,15 +6,7 @@ import '../styling/cart-layout.css';
 
 
 export const CartLayout = () => {
-//  $(function () {
-//    $(' .lang-slice').on('mouseover', () => {
-//     $('#lang-dropdown').show();
-//     }),
- 
-//       $(' .lang-slice').on('mouseleave', () => {
-//     $('#lang-dropdown').hide();
-//     })
-// })
+
   return (
     <div className="CartLayout">
       <div className="cart-Header">

@@ -4,10 +4,14 @@ import "../styling/real-products.css";
 import RatingStars from "./RatingStars";
 import { LiaStar, LiaStarSolid } from "react-icons/lia";
 import { LiaStarHalfAltSolid } from "react-icons/lia";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart} from "../logic/Cart-slice";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const RealProducts = () => {
   const customIcons = [
-    // *********** 2.5
+    // *********** 2.5   ===>  0
     [
       {
         icon: <LiaStarSolid size={17} />,
@@ -26,7 +30,7 @@ export const RealProducts = () => {
       },
     ],
 
-    //  ********  3
+    //  ********  3     ===>  1
     [
       {
         icon: <LiaStarSolid size={17} />,
@@ -45,7 +49,7 @@ export const RealProducts = () => {
       },
     ],
 
-    //  ******** 3.5
+    //  ******** 3.5      ===>  2
     [
       {
         icon: <LiaStarSolid size={17} />,
@@ -63,7 +67,7 @@ export const RealProducts = () => {
         icon: <LiaStar size={17} />,
       },
     ],
-    //  ********  4
+    //  ********  4      ===>  3
     [
       {
         icon: <LiaStarSolid size={17} />,
@@ -81,7 +85,7 @@ export const RealProducts = () => {
         icon: <LiaStar size={17} />,
       },
     ],
-    //  ******** 4.5
+    //  ******** 4.5     ===>  4
     [
       {
         icon: <LiaStarSolid size={17} />,
@@ -99,7 +103,8 @@ export const RealProducts = () => {
         icon: <LiaStarHalfAltSolid size={17} />,
       },
     ],
-    //  ********  5
+
+    //  ********  5      ===>  5
 
     [
       {
@@ -120,277 +125,117 @@ export const RealProducts = () => {
     ],
   ];
 
+  const styleAddedBtn = {
+    background: 'hsl(0, 39%, 43%)',
+  width: '40%',
+	fontSize: '0.3rem',
+  paddingInline: '6px',
+ }
+
+  const [items, setItems] = useState([]);
+  const getItems = async () => {
+    const { data } = await axios.get(" http://localhost:3001/products");
+    setItems(data);
+  };
+
+  useEffect(() => {
+    getItems();
+  }, []);
+
+  const dispatch = useDispatch();
+
+  const { cartItems} = useSelector((state) => state.shoppingCart);
+
+  
+   function styleTotalPrice(cost) {
+     //       let addCommas = cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+     let addCommas = cost.toLocaleString();
+      return addCommas;
+ }
+//     function stylePrice(cost) {
+//       let addCommas = cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//       return addCommas;
+//  }
+
 
   return (
-    <div id="RealProducts" className="RealProducts">
-      <div className="RealProducts-fir-row container">
-        <div className="row">
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct1.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">iPhone 14 Pro Max</h6>
-                <p className="card-text">
-                  <span>
-                    {" "}
-                    New apple iphone 14 pro Max 256GB, space black, bluetooth,
-                    wi-fi
-                  </span>{" "}
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[2]}
-                    initialValue={3.5}
-                    readonly={true}
-                    allowFraction={true}
-                   
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  52,690 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                  </Link>
-                </div>{" "}
-                  
-              </div>
-            </div>
-          </div>
+    <>
+      <div id="RealProducts" className="RealProducts">
+        <div className="RealProducts-fir-row container">
+          {items.length > 0 ? (
+            <div className="row">
+              {items.map((item) => (
+                <div key={item.id} className="col-3">
+                  <div className="card">
+                    <img src={item.image} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                      <h6 className="card-title">{item.title}</h6>
+                      <p className="card-text">
+                        <span> {item.description}</span>{" "}
+                      </p>
+                      <p>
+                        <RatingStars
+                          customIcons={customIcons[item.ratingOrder]}
+                          initialValue={item.initialValue}
+                          readonly={true}
+                          allowFraction={true}
+                        />
+                      </p>
+                      <div className="price">
+                        {" "}
+                        <span>EGP</span>
+                        {/* {item.price } */}
+                        {/* {Number.isInteger(item.price) == false ? parseFloat(stylePrice(item.price)).toFixed(3) : item.price} */}
+                        {styleTotalPrice(item.price)}
+                        {/* {parseFloat(stylePrice(item.price)).toFixed(2)} */}
+                        <span>00</span>
+                        {cartItems.length > 0 ? (
+                          cartItems.some((val) => val.id === item.id) ? (
+                            <span
+                              style={styleAddedBtn}
+                              className= 'btn'
+                              onClick={() => {
+                                dispatch(addToCart(item));
+                                // totalItemsPrice;
+                              }}
+                            >
+                              Added to cart
+                            </span>
+                          ) : (
+                            <span
+                              className="btn"
+                              onClick={() => {
+                                dispatch(addToCart(item));
+                                // totalItemsPrice;
+                              }}
+                            >
+                              Add to cart
+                            </span>
+                          )
+                        ) : (
+                          <span
+                            className="btn"
+                            onClick={() => {
+                              dispatch(addToCart(item));
+                                // totalItemsPrice;
 
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct4.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">Jack & Jones</h6>
-                <p className="card-text">
-                  <span>Mens Organic Basic Short-sleeves O-Neck T-Shirt</span>{" "}
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[5]}
-                    initialValue={5}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  432 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
+                            }}
+                          >
+                            Add to cart
+                          </span>
+                        )}
+                      </div>{" "}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct5.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">adidas</h6>
-                <p className="card-text">
-                  <span>fluidflue 2.0 shoes running shoes for men</span>
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[3]}
-                    initialValue={4}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  3,599 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct6.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">Tommy Hilfiger</h6>
-                <p className="card-text">
-                  <span>
-                    Watch for Men, Quartz Movement Analog Display. Blue silicon
-                    strap
-                  </span>
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[1]}
-                    initialValue={3}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  4,409 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
-            </div>
-          </div>
+          ) : (
+            <div>....Loading</div>
+          )}
         </div>
       </div>
-
-      <div className="RealProducts-sec-row container">
-        <div className="row">
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct7.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">calvin kelvin cK</h6>
-                <p className="card-text">
-                  <span>
-                    calvin kelvin cK one for unisex, 100ml - eau de toilette
-                  </span>
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[4]}
-                    initialValue={4.5}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  960 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
-            </div>
-          </div>
-
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct8.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">LG vivace washing machine</h6>
-                <p className="card-text">
-                  <span>
-                    LG vivace washing machine 9KG, with Ai dd technology, stone
-                    silver-LG thinQ
-                  </span>
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[0]}
-                    initialValue={2.5}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  29,900 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct9.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">LG 42 litres microwave oven</h6>
-                <p className="card-text">
-                  <span>
-                    microwave oven with Grill - mh8265dis"min, internationally
-                    warranty
-                  </span>
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[2]}
-                    initialValue={3.5}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  7,198 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="card">
-              <img
-                src="/src/assets/imgs/realProduct10.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h6 className="card-title">sony wh-ch517</h6>
-                <p className="card-text">
-                  <span>A wireless bluetooth on-ear mic for phone call,</span>
-                </p>
-                <p>
-                  <RatingStars
-                    customIcons={customIcons[3]}
-                    initialValue={4}
-                    readonly={true}
-                    allowFraction={true}
-                  />
-                </p>
-                <div className = "price">
-                  {" "}
-                  <span> EGP</span>  3,061 <span> 00 </span>
-                <Link to="#" className="btn">
-                  add to cart
-                </Link>
-                </div>{" "}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
+

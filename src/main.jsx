@@ -11,6 +11,9 @@ import { UserLayout } from "./components/User/UserLayout";
 import { UserSignin } from "./components/User/UserSignin";
 import { UserCreateAccount } from "./components/User/UserCreateAccount";
 import { CartLayout } from "./components/CartLayout";
+import { Provider } from "react-redux";
+import { store } from "./logic/store";
+
 
 const router = createBrowserRouter([
   //  Main Layout.
@@ -61,6 +64,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router = {router} />
-  // {/* </React.StrictMode> */}
+    </Provider>
+  //* </React.StrictMode> */}
 );

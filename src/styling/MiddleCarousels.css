@@ -240,7 +240,7 @@ line-height: 1.6rem;
   left: -22%;
   right: -22%;
   padding: 1rem 0;
-  bottom: -10.2%;
+  bottom: -39.7%;
 }
 
 .middle-carousels-container div.middleContainer-divider > *{
@@ -301,3 +301,4 @@ margin-bottom: 3px;
 .middle-carousels-container div.middleContainer-divider a:last-child:hover{
 color: var(--links-1-hover);
 }
+

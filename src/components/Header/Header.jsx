@@ -53,6 +53,26 @@ function Header() {
     
     }),
       
+       $(".cart-container").on("click", () => {
+      $(".select-wrapper").css({
+        'border': "3px solid transparent",
+          'background': '#e6e6e6',
+         ' border': '3px solid transparent',
+          'border-top-left-radius': '6px',
+          'border-bottom-left-radius': '6px',
+          'padding': '0.25em',
+          'font-family': 'var(--regular-font)',
+          'height': '85%',
+          'width': '98%',
+         ' position': 'relative',
+         ' left': '9px',
+         ' top': '6%',
+         ' cursor': 'pointer',
+          'z-index': '1',
+      })
+    
+    }),
+
       $(".select-wrapper").on('mouseover', () => {
         $('.fa-caret-down ').css('color', 'black');
         $('.select-wrapper').children("select").css('color', 'black');

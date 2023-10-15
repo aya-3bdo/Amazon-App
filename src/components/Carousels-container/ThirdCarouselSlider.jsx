@@ -18,14 +18,20 @@ export const ThirdCarouselSlider = () => {
     slidesToScroll: 3,
     autoplay: true,
     pauseOnFocus: true,
-  };
+ };
+  
+  let style = {
+    position: 'relative',
+    minHeight: '358px',
+    top: '380px'
+      }
 
   return (
-    <div className='ThirdCarouselSlider m-0 p-0'>
+    <div   className='ThirdCarouselSlider m-0 p-0'>
 
          {/*  Third Carousel */}
 
-      <div className="third-carousel slider-container px-1 position-relative my-3">
+      <div style={style} className="third-carousel slider-container px-1 position-relative my-3">
         <div className="slider-title mb-1 pt-1 ">
           Shop Today's Deals
           <span className="ms-3">shop all deals</span>

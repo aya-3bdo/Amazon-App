@@ -11,32 +11,37 @@
 position: relative;
 }
 
-.RealProducts .RealProducts-fir-row,
-.RealProducts div.RealProducts-sec-row {
+.RealProducts .RealProducts-fir-row
+/* .RealProducts div.RealProducts-sec-row  */
+{
   padding: 1rem;
   /* min-width: 1400px; */
   min-width: 1454px;
   width: 100%;
   max-height: 420px;
-  margin-bottom: -20px;
   display: flex;
   position: relative;
   left: -21px;
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3,
-.RealProducts .RealProducts-sec-row .row div.col-3 {
+.RealProducts .RealProducts-fir-row .row div.col-3
+/* .RealProducts .RealProducts-sec-row .row div.col-3  */
+{
   display: flex;
   height: 100%;
+    margin-bottom: 20px;
+
 }
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card */
+ {
   padding-block: 16px 22px;
   padding-inline:  16px 12px;
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card > *,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card > * {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card > *
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card > * */
+ {
   margin-inline: auto;
   width: 95%;
   height: 80%;
@@ -44,8 +49,9 @@ position: relative;
   
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  img,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  img {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  img
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  img */
+ {
   height: 43%;
   width: 60%;
   object-fit: contain;
@@ -53,8 +59,9 @@ position: relative;
 
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body ,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body  {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body 
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body  */
+ {
 	margin-left: 0;
   /* background: lightcoral; */
   display: flex;
@@ -67,8 +74,9 @@ position: relative;
 }
 
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > h6.card-title,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > h6.card-title {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > h6.card-title
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > h6.card-title */
+ {
 	font-family: var(--bold-font);
 	text-align: left;
 	font-size: 0.95rem;
@@ -78,48 +86,55 @@ position: relative;
   
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p:first-of-type,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p:first-of-type{
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p:first-of-type
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p:first-of-type */
+{
 	line-height: 25px;
   font-size: 0.7rem;
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p:nth-child(3) ,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p:nth-child(3) {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p:nth-child(3) 
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p:nth-child(3)  */
+{
 margin: 0!important;
 padding: 0;
 }
 
 
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p.card-text > span,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p.card-text > span {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p.card-text > span
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p.card-text > span */
+ {
 	font-size: 0.83rem;
 	color: var(--black-text-60);
 	text-transform: capitalize;
 }
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p.card-text > span,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p.card-text > span{
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body > p.card-text > span
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body > p.card-text > span */
+{
 color: var(--black-text-100);
   display: block;
   height: 80px;
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  > .card-body > p.card-text,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  > .card-body > p.card-text {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  > .card-body > p.card-text
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  > .card-body > p.card-text */
+ {
 margin-bottom: 0;
 }
 
 
-.RealProducts .RealProducts-fir-row .row div.col-3 >  .card  > .card-body > div.price > span:first-child,
-.RealProducts .RealProducts-sec-row .row div.col-3 >  .card  > .card-body > div.price > span:first-child{
+.RealProducts .RealProducts-fir-row .row div.col-3 >  .card  > .card-body > div.price > span:first-child
+/* .RealProducts .RealProducts-sec-row .row div.col-3 >  .card  > .card-body > div.price > span:first-child */
+{
 font-size: 0.4rem;
 vertical-align: super;
-margin-right: -7px;
+margin-right: 1px;
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  > .card-body > div.price,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  > .card-body > div.price{
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  > .card-body > div.price
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  > .card-body > div.price */
+{
 margin: 0!important;
 padding: 0!important;
 font-size: 1.55rem;
@@ -127,15 +142,17 @@ vertical-align:bottom;
 /* border: 1px solid black; */
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  > .card-body  div.price > span:nth-child(2),
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  > .card-body  div.price > span:nth-child(2){
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  > .card-body  div.price > span:nth-child(2)
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  > .card-body  div.price > span:nth-child(2) */
+{
   font-size: 0.9rem;
   vertical-align: super;
-  margin-left: -5px;
+  margin-left: 1px;
   color: var(--black-text-100);
 }
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body  div.price > a,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > a  {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body  div.price > span.btn
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > span.btn  */
+{
 	font-size: 0.5rem;
   width: 35.4%;
   margin: 0;
@@ -151,15 +168,25 @@ border-radius: 15px;
 line-height: 28px;
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body  div.price > a:hover,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > a:hover  {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body  div.price > span.btn:hover
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > span.btn:hover  */
+ {
   text-decoration: none;
  background: hsl(189.4, 95.1%, 31.8%);
  color: var(--white-100);
 }
 
-.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body div.price  > a::first-letter,
-.RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > a::first-letter {
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body  div.price > span.btn.added{
+  background: hsl(0, 39%, 43%);
+  width: 40%;
+	font-size: 0.3rem;
+  padding-inline: 6px;
+
+}
+
+.RealProducts .RealProducts-fir-row .row div.col-3 > .card  >.card-body div.price  > span::first-letter
+/* .RealProducts .RealProducts-sec-row .row div.col-3 > .card  >.card-body div.price > span::first-letter */
+ {
 
 text-transform: capitalize;
 }
