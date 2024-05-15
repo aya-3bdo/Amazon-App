@@ -3,10 +3,10 @@
 
 .BgCarousel {
   z-index: -1;
-  width: 1500px;
-  overflow: scroll; 
+  width: 1450px;
   min-height: 100%;
-  transform: translateY(17%);
+  transform: translateY(17.5%);
+
 }
 
 .BgCarousel .carousel-control-next,
@@ -15,6 +15,15 @@
   opacity: 1;
 }
 
+.BgCarousel .carousel-control-prev{
+  left: -5%;
+}
+
+.BgCarousel .carousel-control-next{
+right: -5%;
+}
+
+/*  Editting the color of main carousel arrows */
 .BgCarousel .carousel-control-next-icon{
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d2d7de'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")!important;
 filter: drop-shadow(2px 2px 2px rgb(97, 96, 96));
@@ -23,16 +32,12 @@ filter: drop-shadow(2px 2px 2px rgb(97, 96, 96));
 .BgCarousel .carousel-control-prev-icon{
 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d2d7de'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e")!important;
 filter: drop-shadow(2px 2px 2px rgb(97, 96, 96));
-
 }
 
 
 @media (min-width: 1440px) {
   .BgCarousel {
-    /* padding-inline: 7% !important; */
-    /* color: #afb5bd; */
     color: #d2d7de;
-
   }
 }
 

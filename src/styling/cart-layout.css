@@ -1,0 +1,25 @@
+.CartLayout{ 
+    min-width: max-content;
+    max-width: none !important;
+    margin-inline: 0!important;
+    padding-inline: 0 !important;
+    min-height: 1500px;
+    max-height: none;
+    position: relative;
+    background: #e3e6e6;
+    overflow-y: hidden;
+}
+
+.CartLayout .cart-Footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+}
+
+.CartLayout .cart-Header{
+	margin-inline: 0!important;
+	padding-inline: 0 !important;
+	width: min-content;
+	z-index: 20;
+} 

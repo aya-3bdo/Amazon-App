@@ -1,31 +1,38 @@
 /* import fonts */
-@import './amazonEmber-fonts.css';
+@import "./amazonEmber-fonts.css";
+@import url(../styling/colors.css);
 
-.TopStrip{
+.TopStrip {
   background-color: #131921;
   color: #ffffff;
-	position: static;
-
+  transition: all 0.2s !important;
+  min-width: 1000px!important;
 
 }
 
-.TopStrip .navbar{
-  padding-bottom: 0.25rem !important;
+.TopStrip .navbar {
+  padding-bottom: 0.13rem !important;
+  padding-top: 0.22rem;
+  max-height: 60px;
+  margin-block: 0px;
+
 }
 /* #######  left section -- top strip ######## */
 
 .left-section-top-strip {
-  max-width: 25%;
+  /* max-width: 25%; */
   max-height: 70% !important;
 }
 
-/* logo slice*/
+/* -----------------------------------  logo slice   -----------------------------------*/
 .navLogo {
   max-width: 9rem;
   min-height: 2.3rem;
+  padding: 12px 8px 0px;
 }
 
-/* text slice */
+/*-----------------------------------  text slice  -----------------------------------*/
+
 .logoText {
   font-family: var(--regular-font);
   font-size: 14px;
@@ -39,7 +46,13 @@
   -webkit-filter: contrast(150%) saturate(250%);
 }
 
-/* location slice*/
+/* -----------------------------------  location slice  -----------------------------------*/
+.left-section-top-strip div.location {
+  padding: 12px 10px 8px !important;
+  position: relative;
+  left: -1.8%;
+}
+
 div.locationText :nth-child(1) {
   font-size: 0.65rem;
   font-family: var(--regular-font);
@@ -54,50 +67,83 @@ div.locationText :nth-child(1) span {
 div.locationText :nth-child(2) {
   font-size: 0.7rem;
   color: #fff;
-  font-family: var(--regular-font);
-  font-weight: 600;
+  font-family: var(--bold-font);
+  font-weight: 800;
 }
 
-/* #######  middle section -- top strip ######## */
+/* #########################    middle section -- top strip   ######################### */
+
 
 .middle-section-top-strip {
   max-width: 63vw;
-  overflow: hidden!important;
+  width: 63vw;
+min-width: 40vw;
+  overflow: hidden !important;
+  margin-block: 2px -2px;
+  display:flex;
+  
 }
 
-.middle-side-search .form-control:focus {
-  border: none;
-  box-shadow: none;
-}
-
-/* select menu slice */
+/*----------------------------------- select menu slice -----------------------------------*/
 #select-menu {
-  border: 0px;
+  border: transparent;
   background: transparent !important;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
+  display: none;  
+ 
+
 }
 
-.left-side-search :hover {
-  border: 2.5px solid #f90 !important;
-  background: #ccc !important;
+#select-menu:hover {
+  border: transparent !important;
 }
 
-.select-wrapper :hover {
-  border: 0px transparent !important;
+.left-side-search {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  position: relative;
+  left: 0.5%;
+  bottom: 3px;
+  cursor: pointer;
+  padding-right: 4px;
+/* margin-left: 10px; */
+
+}
+
+/* .select-wrapper:hover {
   cursor: pointer !important;
+  border: 3px solid #f90;
+  height: 93%;
+  top: 1%;
+  z-index: 3;
+
+} */
+
+.select-wrapper:hover {
+  background: #d4d4d4;
+
 }
 
 .select-wrapper {
-  background: #f3f3f3 !important;
-  border-right: 1px solid #a7acb2;
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
-  padding: 0.25rem 0.125rem;
+  background: #e6e6e6;
+  border: 3px solid transparent;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 0.25em;
   font-family: var(--regular-font);
   height: 85%;
+  width: 98%;
+  position: relative;
+  left: 9px;
+  top: 6%;
+  cursor: pointer;
+  z-index: 1;
+  /* margin-right: 3px; */
+
 }
 
 .select-wrapper .fa-caret-down {
@@ -106,9 +152,12 @@ div.locationText :nth-child(2) {
   font-size: 0.55rem !important;
 }
 
+
+
 .select-wrapper .dropDown-icon {
   position: absolute;
   right: 0.5rem;
+  padding-right: 3px;
 }
 
 .select-wrapper select {
@@ -117,48 +166,91 @@ div.locationText :nth-child(2) {
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-right: 2px;
 }
 
-.select-wrapper select:hover {
+/* .select-wrapper select:hover {
   color: #0f1111 !important;
+
+} */
+
+/*-----------------------------------  search slice -----------------------------------*/
+
+.middle-section-top-strip{
+position: relative;
+left: -0.6%;
+
 }
 
-/* search slice*/
+
 .middle-section-top-strip .middle-side-search input {
   font-size: 0.7rem;
   font-family: var(--regular-font);
   border-radius: 0;
-  width: 59vw;
+  width: 54.5vw;
   height: 85%;
+  border-left: 2px solid #a7acb2;
+  z-index: 2;
+  position: relative;
 }
 
-@media (max-width: 992px) {
 
-.navbar.navbar-expand-lg{
-  min-width: 992px;
-}
-  .middle-section-top-strip .middle-side-search  {
-    max-width: 60%;
+@media (max-width: 1000px) {
+ 
+  .middle-section-top-strip{
+    min-width: 700px!important;
     text-indent: 40%;
   }
- 
+
+  .middle-section-top-strip .middle-side-search input {
+    min-width: 570px;
+    width: 100%;
+  }
+
+
+
+
 }
 
 button.nav-search-submit-button {
   background: #febd69 !important;
-  color: #0f1111!important;
+  color: #0f1111 !important;
   font-size: large;
   font-weight: 400 !important;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
   border: none;
   height: 85%;
-  padding-bottom: 8px !important;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  position: relative;
+  bottom: 0.21%;
+  /* left: -52%; */
+  margin-right: 25px;
 }
 
-/* #######  right section -- top strip ######## */
+.right-side-search button.nav-search-submit-button:hover {
+  background: #f3a847 !important;
+}
+/* ##########################  right section -- top strip   ################################ */
 
-/* lang-slice */
+.right-section-top-strip {
+  position: relative;
+  /* left: -1.5%; */
+  bottom: 2px;
+  right: 20px;
+
+}
+
+/*-----------------------------------   lang-slice   -----------------------------------*/
+
+.right-section-top-strip .lang-slice {
+  line-height: 22px !important;
+  padding: 12px 8px 10px 10px !important;
+  margin-bottom: 0.5px;
+}
+
 #flag-img img {
   width: 1.2rem !important;
   height: 1.2rem !important;
@@ -169,16 +261,17 @@ button.nav-search-submit-button {
 
 .right-section-top-strip button,
 .right-section-top-strip button:hover {
-  color: #a7acb2!important;
+  color: #a7acb2 !important;
 }
 
 .right-section-top-strip .lang-slice .lang {
   font-size: 0.7rem;
   font-weight: 600;
   color: #f3f3f3;
+  font-family: var(--bold-font);
 }
 
-#flag-img span {
+.right-section-top-strip #flag-img span {
   font-size: 0.8rem;
   font-family: var(--regular-font);
   font-weight: 600;
@@ -186,7 +279,7 @@ button.nav-search-submit-button {
   padding-left: 0.1rem;
 }
 
-.right-section-top-strip dropdown .btn-check:focus+.btn,
+.right-section-top-strip dropdown .btn-check:focus + .btn,
 .btn:focus {
   box-shadow: none !important;
 }
@@ -202,20 +295,22 @@ button.nav-search-submit-button {
   margin-top: 0.125rem;
   display: flex;
   flex-direction: column;
-  width: 13rem;
+  width: 12em;
   font-size: 1rem;
   text-transform: capitalize;
   cursor: pointer;
   border-top-color: #fff;
+  /* display: none; */
 }
 
 #dropDown-arrow {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #fff;
   position: absolute;
-  top: -62%;
-  left: 22%;
+  top: 38px !important;
+  left: 57px !important;
+  display: none;
 }
 
 .right-section-top-strip input {
@@ -227,7 +322,7 @@ button.nav-search-submit-button {
   justify-content: start;
   align-items: center;
   cursor: pointer;
-  margin: 0.5rem 0.2rem;
+  margin: 0.3rem 0.2rem 0.2rem;
 }
 
 .right-section-top-strip .dropdown-menu .dropdown-divider {
@@ -237,17 +332,19 @@ button.nav-search-submit-button {
 
 .right-section-top-strip .dropdown-menu label:hover {
   text-decoration: underline;
-  color: #f6883e!important;
+  color: #f6883e !important;
 }
 
-.right-section-top-strip .dropdown-menu {
-  width: 13rem;
-  height: 13.1rem;
+.right-section-top-strip .dropdown-menu#lang-dropdown {
+  width:243px;
+  height: 231px;
+  left: -70px;
+  top: 21px;
 }
 
 .right-section-top-strip .dropdown-menu .check-circle {
   display: block;
-  border: 1px solid #666!important;
+  border: 1px solid #666 !important;
   border-radius: 50%;
   width: 17px;
   height: 17px;
@@ -260,7 +357,7 @@ button.nav-search-submit-button {
   height: 0.36rem;
   border-radius: 50%;
   display: block;
-  background-color: #e87121!important;
+  background-color: #e87121 !important;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -269,7 +366,7 @@ button.nav-search-submit-button {
 
 .right-section-top-strip .dropdown-menu label {
   cursor: pointer;
-  color: #444!important;
+  color: #444 !important;
   font-family: var(--regular-font);
   font-size: 0.65rem;
   line-height: 1.5rem;
@@ -277,6 +374,11 @@ button.nav-search-submit-button {
 
 .right-section-top-strip .dropdown-menu a {
   font-size: 0.7rem;
+}
+
+.right-section-top-strip .dropdown-menu a:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--links-1-hover) !important;
 }
 
 #dropDown-img {
@@ -296,41 +398,67 @@ button.nav-search-submit-button {
   margin-top: 0.68rem;
 }
 
-/* sign in slice*/
+/* ----------------------------------- sign in slice  ----------------------------------- */
 
-.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show {
-  width: 27rem !important;
-  height: 16rem;
-  line-height: 0.75rem;
+.right-section-top-strip div.sign-in-slice {
+  line-height: 15px;
+  position: relative;
+  top: 3px;
+  padding: 7px 1px 3px 8px !important;
+  margin-bottom: 4px;
+}
+
+.right-section-top-strip div.sign-in-slice > div.signIn-title {
   font-family: var(--regular-font);
-  top: 115%;
-  left: -260%;
-  color: #0f1111 !important;
+  font-size: 0.87rem;
+}
+
+.right-section-top-strip
+  div.sign-in-slice
+  > .signIn-dropDown-menu
+  > h6:first-child {
+  font-weight: var(--bold-font) !important;
+  font-size: 0.7rem;
+  word-spacing: -2px;
+  margin-bottom: 4px;
+}
+
+
+.right-section-top-strip .signIn-dropDown-menu #sign-in-menu{
+  width: 500px;
+  height: 290px;
+  position: absolute;
+  top: 26px;
+  right: -95%;
+}
+
+div.right-section-top-strip div.signIn-dropDown-menu #sign-in-menu div:first-child > div.new-customer {
+font-family: var(--regular-font);
 
 }
 
 #dropDown-arrow-signIn {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #fff;
   position: absolute;
   top: 78%;
   right: 0%;
-
+  display: none;
 }
 
 .right-section-top-strip .signIn-dropDown-menu .row,
 .signIn-btn:nth-last-child(1),
 .signIn-btn:nth-child(1),
-.sign-in-slice .row ul li:last-of-type {
+.sign-in-slice .row ul li  {
   font-size: 0.7rem !important;
   text-transform: capitalize;
-  color: #666 !important;
-  font-weight: 500 !important;
+  color:hsl(0, 0%, 27%);
+  font-weight: 600;
 }
 
-.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show .list-header,
-.row .left-side span:nth-of-type(1):not(div span.text-lowercase) {
+.right-section-top-strip .signIn-dropDown-menu #sign-in-menu .list-header,
+.row .left-side span:first-child {
   font-size: 0.95rem !important;
   font-weight: bolder;
   font-family: var(--bold-font);
@@ -338,11 +466,22 @@ button.nav-search-submit-button {
   cursor: default !important;
 }
 
+.right-section-top-strip div.sign-in-slice div.signIn-dropDown-menu.dropdown div.row div.left-side div{
+  color:hsl(0, 0%, 27%);
+  font-family: var(--regular-font);
+  margin-top: -4px;
+  text-transform: none;
+}
+
 .right-section-top-strip .signIn-dropDown-menu .row ul {
   border-left: 2px solid #cccccc46;
 }
 
-.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show .signIn-btn .btn {
+.right-section-top-strip
+  .signIn-dropDown-menu
+  #sign-in-menu
+  .signIn-btn
+  div.btn {
   border: 1px solid #fcd200;
   background: #ffd814;
   font-size: 0.71rem;
@@ -352,25 +491,39 @@ button.nav-search-submit-button {
   box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
   border-radius: 8px;
   font-weight: 500;
-  color: #131921 !important;
+  margin-top: -4px;
 }
 
-.right-section-top-strip .signIn-dropDown-menu .dropdown-menu.show .signIn-btn .btn:hover {
+.right-section-top-strip
+  .signIn-dropDown-menu
+   #sign-in-menu
+  .signIn-btn
+  .btn
+  a {
+  color: #131921;
+}
+
+.right-section-top-strip
+  .signIn-dropDown-menu
+  #sign-in-menu
+  .signIn-btn
+  .btn:hover {
   text-decoration: underline;
-  -webkit-text-decoration-color: rgb(176, 55, 55)!important;
-  text-decoration-color: rgb(176, 55, 55)!important;
+  -webkit-text-decoration-color: rgb(176, 55, 55) !important;
+  text-decoration-color: rgb(176, 55, 55) !important;
   text-decoration-thickness: 1px;
   padding-bottom: 0.4rem;
 }
 
-.sign-in-slice .row ul li:hover:not(.list-header),
-.sign-in-slice .row .left-side div:hover {
-  text-decoration: underline;
-  color: #f6883e!important;
+.sign-in-slice .row ul li:hover:not(.list-header):hover,
+.sign-in-slice .row .left-side div:hover,
+.sign-in-slice .signIn-dropDown-menu a:hover {
+  text-decoration: underline !important;
+  color: #f6883e !important;
 }
 
 .sign-in-slice .signIn-title {
-  color: #ecf0f0!important;
+  color: #ecf0f0 !important;
   font-size: 0.61rem;
   font-family: var(--regular-font);
   font-weight: 300 !important;
@@ -390,14 +543,27 @@ button.nav-search-submit-button {
   font-size: 0.74rem;
 }
 
-/* orders slice  */
+.sign-in-slice .signIn-dropDown-menu a {
+  color: var(--links-3);
+}
+
+/* -----------------------------------   orders slice  ----------------------------------- */
+.orders-slice {
+  padding: 16px 8px 3px !important;
+}
+
 .orders-slice span {
   font-family: var(--bold-font);
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.86rem;
 }
 
-/*  cart slice  */
+/* -----------------------------------    cart slice   ----------------------------------- */
+
+.cart-slice {
+  padding: 9px 8px 5px 5px !important;
+}
+
 .cart-slice .cart-img img {
   color: #fff;
   width: 2rem;
@@ -415,10 +581,26 @@ button.nav-search-submit-button {
 }
 
 .cart-slice .cart-items {
-  font-size: 0.95rem;
-  color: #ed8603!important;
+  font-size: 0.98rem;
+  color: #ed8603 !important;
   font-family: var(--bold-font);
-  bottom: 40%;
+  bottom: 32%;
+}
+
+.right-section-top-strip .lang-slice,
+.right-section-top-strip .sign-in-slice,
+.orders-slice {
+  margin-right: 11px !important;
+}
+
+.navLogo,
+.location,
+.right-section-top-strip .lang-slice,
+.right-section-top-strip .sign-in-slice,
+.right-section-top-strip .cart-slice,
+.orders-slice,
+.right-section-top-strip .cart-slice:last-child {
+  border: 1.7px solid transparent;
 }
 
 .navLogo:hover,
@@ -428,10 +610,6 @@ button.nav-search-submit-button {
 .orders-slice:hover,
 .right-section-top-strip .cart-slice:hover,
 .right-section-top-strip .cart-slice:last-child:hover {
-  border: 1.5px solid #f3f3f3;
+  border: 1.7px solid #f3f3f3;
   cursor: pointer;
 }
-
-/* ####################### */
-
-/* middle section in the top strip */

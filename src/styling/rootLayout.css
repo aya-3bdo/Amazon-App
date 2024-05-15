@@ -1,12 +1,13 @@
 .rootLayout{
-	/* width: 100vw; */
-	display: flex;
-	flex-direction: column;
-	overflow: auto;
+	min-width: max-content;
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* overflow: clip; */
 	max-width: none !important;
 	margin-inline: 0!important;
 	padding-inline: 0 !important;
-	min-height:3000px ;
-	
+	min-height:3500px ;
+	position: relative;	
+  background: #e3e6e6;
 }
 

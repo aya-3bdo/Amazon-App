@@ -2,16 +2,17 @@
 	--links-1: hsl(210, 100%, 33%);
 	--links-1-hover: hsl(30, 86%, 48%);
 	--links-2: hsl(189, 100%, 26%);
+	--links-3:hsl(208, 100%, 38%);
 	--links-2-hover: hsl(18, 73%, 45%);
 	--white-100: hsl(0, 0%, 100%);
 	--white-text-90:hsl(0, 0%, 87%);
 	--white-text-80:hsl(0, 0%, 80%);
 	--white-text-60: hsl(0, 0%, 60%);
 	--black-text-100: hsl(180, 7%, 6%);
+	--black-text-90: hsl(0, 0%, 33%);
 	--black-navbar: hsl(214, 27%, 10%);
 	--darkBlue-navbar:  hsl(213, 28%, 19%);
 	--lightDarkBlue-navbar: hsl(213, 24%, 28%);
-	--red-text: hsl(346, 89%, 42%);
+	--red-text-background: #cc0c39;
 	--rating-stars: hsl(36, 100%, 55%);
-	
 }
