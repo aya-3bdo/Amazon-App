@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styling/shopping-cart.css";
 import { Link } from "react-router-dom";
-import ProductDetails from "./ProductDetails";
 import { useSelector, useDispatch } from "react-redux";
-import { products } from "../../products.json";
-import { changeQty, deleteItem } from "../logic/Cart-slice";
+import {
+  getProducts,
+  deleteShoppingCartItem,
+  updateShoppingCartItemQty,
+  getShoppingCartItems,
+} from "../logic/Cart-slice";
 
 const ShoppingCart = () => {
   $(function () {
-    //   $("div.inputText").on("click", function () {
-    //     $(this).siblings("ul.options-list").toggle();
-    //     }),
-    // $("li.option").on("click", function () {
-    //   $(this)
-    //     .parents("ul.options-list")
-    //     .siblings("div.inputText")
-    //     .children("input.text")
-    //     .val($(this).text());
-    // })
-    // $("li.option").on("click", function () {
-    //   $(this).parents("ul.options-list").hide();
-    // }),
     $("li.option").on("click", function () {
       if ($(this).text() == "10+") {
         $(this).parents("ul.options-list").css("display", "none");
@@ -36,70 +26,118 @@ const ShoppingCart = () => {
         $(this).parents("ul.options-list").siblings("div.enterQty").show();
       }
     });
-
-    //   $("div.shopping-cart-container").on('click', function() {
-    //     console.log($(this).children("div.inputText"))
-    // })
   });
 
-  // localStorage.clear()
   const dispatch = useDispatch();
+  const { shCartItems = []} = useSelector(
+    (state) => state.shoppingCart
+  );
 
-  const { cartItems } = useSelector((state) => state.shoppingCart);
+  function totalItemsPrice() {
+    let cartTotal = 0;
+    shCartItems?.forEach((ele) => {
+      return (cartTotal += ele.total);
+    });
 
-  const [inputValue, setInputValue] = useState(0);
+    if (Number.isInteger(cartTotal) == false) {
+      return parseFloat(cartTotal).toFixed(3);
+    } else {
+      return cartTotal;
+    }
+  }
 
   function getItemsAmount() {
     let total = 0;
-    cartItems.forEach((ele) => {
+    shCartItems?.forEach((ele) => {
       total += +ele.quantity;
     });
     return total;
   }
 
-  //   const totalItemsPrice() = cartItems.reduce((totalPrice, cartItem) => {
-  //     let total = totalPrice + (cartItem.quantity * (+cartItem.price));
-  //     if (Number.isInteger(total) == false) {
-  //     return parseFloat(total).toFixed(3);
-  //     } else {
-  //       return total;
-  //     }
-  // ;
-  //   }, 0);
+  const [inputValue, setInputValue] = useState(1);
 
-  function totalItemsPrice() {
-    let total = 0;
-    cartItems.forEach((ele) => {
-      return total += ele.quantity * +ele.price;
-     
-    });
+  useEffect(() => {
+    dispatch(getShoppingCartItems());
+    dispatch(getProducts());
+  }, [dispatch]);
 
-
-
-
-    if (Number.isInteger(total) == false) {
-      return parseFloat(total).toFixed(3);
-      // return parseFloat(styleTotalPrice(total)).toFixed(3);
-
-    } else {
-      return total;
-    }
-  }
+  // Handle Select Value Changing synchronously.
+  const handleSelectValue = (event) => {
+    event.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
+      event.target.innerText;
+  };
 
   getItemsAmount();
   totalItemsPrice();
 
-  // localStorage.clear();
-   function styleTotalPrice(cost) {
-     //       let addCommas = cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-     let addCommas = cost.toLocaleString();
-      return addCommas;
- }
+  const handleHidingOptionList = (e) => {
+    let inputList = document.querySelectorAll(".inputText");
+    let optionList = document.querySelectorAll(".options-list");
+    let notTheTarget = e.target.classList.contains("inputText") == false;
+    [...inputList]?.forEach((input) => {
+      if (notTheTarget && input.tagName == "DIV") {
+        [...optionList]?.forEach((list) => {
+          if (list.classList.contains("show") === true) {
+            list.classList.remove("show");
+          }
+        });
+      }
+    });
+  };
+
+  //  Handle dispatching updateQty action.
+  const HandleDispatchQtyUpdate = (e, item) => {
+    dispatch(
+      updateShoppingCartItemQty({
+        newVal: e.target.innerText,
+        item,
+      })
+    )
+      .unwrap()
+      .catch((rejectedValueOrSerializedError) => {
+        window.alert(
+          `${rejectedValueOrSerializedError}. Please, try again later.`
+        );
+      });
+  };
+
+  // Handle update Quantity Button.
+  const handleUpdateQtyBTN = (item) => {
+    dispatch(
+      updateShoppingCartItemQty({
+        newVal: Number(inputValue) || +item.quantity,
+        item,
+      })
+    )
+      .unwrap()
+      .catch((rejectedValueOrSerializedError) => {
+        window.alert(
+          `${rejectedValueOrSerializedError}. Please, try again later.`
+        );
+      });
+  };
+
+  //  Handle dispatching Delete action
+  const handleDispatchDeleteItem = (item) => {
+    dispatch(deleteShoppingCartItem(item.id))
+      .unwrap()
+      .catch((rejectedValueOrSerializedError) => {
+        window.alert(
+          `Something went wrong, ${rejectedValueOrSerializedError}.`
+        );
+      });
+  };
+
   return (
     <>
-      <div className="cart-container">
+      <div
+        className="cart-container"
+        onClick={(e) => {
+          handleHidingOptionList(e);
+        }}
+      >
         <div className="shopping-cart-container m-0 p-1 pe-0 pb-0">
-          {cartItems.length < 1 ? (
+          {shCartItems?.length < 1 ? (
             <div className="empty-shopping-cart fir-slice">
               <img src="../../src/assets/imgs/Shopping-cart.svg" />
               <div className="right-content">
@@ -122,7 +160,7 @@ const ShoppingCart = () => {
                 <div className="sh-title-container">
                   <h2>shopping cart</h2>
                 </div>
-                {cartItems.map((item) => (
+                {shCartItems?.map((item) => (
                   <div id="cartItem" key={item.id}>
                     <div className="sh-cart-content d-flex position-relative">
                       <div className="sh-left-content">
@@ -131,11 +169,7 @@ const ShoppingCart = () => {
                       <div className="sh-right-content  ">
                         <h5 className="item-title">{item.description}</h5>
                         <span className="item-price d-block">
-                          EGP{" "}
-                          {/* {Number.isInteger(item.price) == false
-                            ? parseFloat(item.price).toFixed(3)
-                            : item.price} */}
-                          {styleTotalPrice(item.price)}
+                          EGP {item.price?.toLocaleString()}
                         </span>
                         <span className="item-stock status d-block">
                           In stock
@@ -143,13 +177,9 @@ const ShoppingCart = () => {
                         <div className="cart-buttons d-flex ">
                           <div className="select-menu">
                             <form>
-                              <div
-                                className="custom-select-menu"
-                                // onClick={console.log('object')}
-                              >
+                              <div className="custom-select-menu">
                                 <div
                                   className="inputText"
-                                  value={cartItems[item]}
                                   onClick={(e) =>
                                     e.target.nextElementSibling.nextElementSibling.classList.toggle(
                                       "show"
@@ -162,6 +192,7 @@ const ShoppingCart = () => {
                                     type="text"
                                     value={item.quantity}
                                     readOnly
+                                    disabled
                                   />
                                   <span className="select-btn">
                                     <i className="fa-solid fa-angle-up"></i>
@@ -171,15 +202,25 @@ const ShoppingCart = () => {
                                   <input
                                     type="text"
                                     onChange={(e) =>
-                                      setInputValue(Number(e.target.value) || 0)
+                                      setInputValue(e.target.value) ||
+                                      item.quantity
                                     }
                                   />
                                 </div>
-                                <ul className="options-list">
+                                <ul className={`options-list`} id={item.id}>
                                   <li
                                     className="delete-option"
                                     onClick={() => {
-                                      dispatch(deleteItem(item));
+                                      // dispatch(deleteShoppingCartItem(item.id))
+                                      //   .unwrap()
+                                      //   .catch(
+                                      //     (rejectedValueOrSerializedError) => {
+                                      //       window.alert(
+                                      //         `Something went wrong, ${rejectedValueOrSerializedError}.`
+                                      //       );
+                                      //     }
+                                      //   );
+                                      handleDispatchDeleteItem(item);
                                       getItemsAmount();
                                     }}
                                   >
@@ -188,19 +229,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
                                       totalItemsPrice();
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     1
@@ -208,19 +240,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
                                       totalItemsPrice();
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     2
@@ -228,20 +251,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        dispatch(
-                                          changeQty({
-                                            newVal: e.target.innerText,
-                                            item,
-                                          })
-                                        );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
                                       totalItemsPrice();
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     3
@@ -249,20 +262,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
-
                                       totalItemsPrice();
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     4
@@ -270,20 +273,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
-
                                       totalItemsPrice();
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     5
@@ -291,20 +284,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
-
                                       totalItemsPrice();
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     6
@@ -312,20 +295,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
                                       totalItemsPrice();
-
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     7
@@ -333,20 +306,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
                                       totalItemsPrice();
-
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     8
@@ -354,20 +317,10 @@ const ShoppingCart = () => {
                                   <li
                                     className="option"
                                     onClick={(e) => {
-                                      dispatch(
-                                        changeQty({
-                                          newVal: +e.target.innerText,
-                                          item,
-                                        })
-                                      );
+                                      handleSelectValue(e);
+                                      HandleDispatchQtyUpdate(e, item);
                                       getItemsAmount();
                                       totalItemsPrice();
-
-                                      e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
-                                        e.target.innerText;
-                                      e.target.parentElement.classList.remove(
-                                        "show"
-                                      );
                                     }}
                                   >
                                     9
@@ -389,12 +342,7 @@ const ShoppingCart = () => {
                           <span
                             id="update"
                             onClick={() => {
-                              dispatch(
-                                changeQty({
-                                  newVal: Number(inputValue) || 0,
-                                  item,
-                                })
-                              );
+                              handleUpdateQtyBTN(item);
                               getItemsAmount();
                               totalItemsPrice();
                             }}
@@ -404,7 +352,14 @@ const ShoppingCart = () => {
                           <span className="separator">|</span>
                           <span
                             onClick={() => {
-                              dispatch(deleteItem(item));
+                              // dispatch(deleteShoppingCartItem(item.id))
+                              //   .unwrap()
+                              //   .catch((rejectedValueOrSerializedError) => {
+                              //     window.alert(
+                              //       `Something went wrong, ${rejectedValueOrSerializedError}.`
+                              //     );
+                              //   });
+                              handleDispatchDeleteItem(item);
                               totalItemsPrice();
                             }}
                           >

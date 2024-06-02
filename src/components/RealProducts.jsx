@@ -1,13 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styling/real-products.css";
 import RatingStars from "./RatingStars";
 import { LiaStar, LiaStarSolid } from "react-icons/lia";
 import { LiaStarHalfAltSolid } from "react-icons/lia";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart} from "../logic/Cart-slice";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useGetAllProductsQuery } from "../logic/cartItemsApi";
+import {
+  getProducts,
+  getShoppingCartItems,
+  addShoppingCartItem,
+} from "../logic/Cart-slice";
 
 export const RealProducts = () => {
   const customIcons = [
@@ -126,45 +129,48 @@ export const RealProducts = () => {
   ];
 
   const styleAddedBtn = {
-    background: 'hsl(0, 39%, 43%)',
-  width: '40%',
-	fontSize: '0.3rem',
-  paddingInline: '6px',
- }
-
-  const [items, setItems] = useState([]);
-  const getItems = async () => {
-    const { data } = await axios.get(" http://localhost:3001/products");
-    setItems(data);
+    background: "hsl(0, 39%, 43%)",
+    width: "40%",
+    fontSize: "0.3rem",
+    paddingInline: "6px",
   };
 
-  useEffect(() => {
-    getItems();
-  }, []);
-
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts());
+    dispatch(getShoppingCartItems());
+  }, [dispatch]);
 
-  const { cartItems} = useSelector((state) => state.shoppingCart);
+  const { shCartItems } = useSelector((state) => state.shoppingCart);
 
-  
-   function styleTotalPrice(cost) {
-     //       let addCommas = cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-     let addCommas = cost.toLocaleString();
-      return addCommas;
- }
-//     function stylePrice(cost) {
-//       let addCommas = cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//       return addCommas;
-//  }
+  const {
+    data: allProducts = [],
+    isLoading: allProducts_isLoading,
+    isSuccess: allProducts_isSuccesss,
+  } = useGetAllProductsQuery();
 
+  //  Handle dispatching Add Item action
+  const handleDispatchAddItem = (item) => {
+    dispatch(
+      addShoppingCartItem({
+        item,
+      })
+    )
+      .unwrap()
+      .catch((rejectedValueOrSerializedError) => {
+        window.alert(
+          `Something went wrong, ${rejectedValueOrSerializedError}.`
+        );
+      });
+  };
 
   return (
     <>
       <div id="RealProducts" className="RealProducts">
         <div className="RealProducts-fir-row container">
-          {items.length > 0 ? (
+          {allProducts_isSuccesss && allProducts.length > 0 ? (
             <div className="row">
-              {items.map((item) => (
+              {allProducts?.map((item) => (
                 <div key={item.id} className="col-3">
                   <div className="card">
                     <img src={item.image} className="card-img-top" alt="..." />
@@ -184,19 +190,15 @@ export const RealProducts = () => {
                       <div className="price">
                         {" "}
                         <span>EGP</span>
-                        {/* {item.price } */}
-                        {/* {Number.isInteger(item.price) == false ? parseFloat(stylePrice(item.price)).toFixed(3) : item.price} */}
-                        {styleTotalPrice(item.price)}
-                        {/* {parseFloat(stylePrice(item.price)).toFixed(2)} */}
+                        {item.price?.toLocaleString()}
                         <span>00</span>
-                        {cartItems.length > 0 ? (
-                          cartItems.some((val) => val.id === item.id) ? (
+                        {allProducts_isSuccesss && shCartItems?.length > 0 ? (
+                          shCartItems?.some((val) => val.id === item.id) ? (
                             <span
                               style={styleAddedBtn}
-                              className= 'btn'
+                              className="btn"
                               onClick={() => {
-                                dispatch(addToCart(item));
-                                // totalItemsPrice;
+                                handleDispatchAddItem(item);
                               }}
                             >
                               Added to cart
@@ -205,8 +207,7 @@ export const RealProducts = () => {
                             <span
                               className="btn"
                               onClick={() => {
-                                dispatch(addToCart(item));
-                                // totalItemsPrice;
+                                handleDispatchAddItem(item);
                               }}
                             >
                               Add to cart
@@ -216,9 +217,7 @@ export const RealProducts = () => {
                           <span
                             className="btn"
                             onClick={() => {
-                              dispatch(addToCart(item));
-                                // totalItemsPrice;
-
+                              handleDispatchAddItem(item);
                             }}
                           >
                             Add to cart
@@ -231,7 +230,11 @@ export const RealProducts = () => {
               ))}
             </div>
           ) : (
-            <div>....Loading</div>
+            <div className="loading ">
+              <div className="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
           )}
         </div>
       </div>
@@ -239,3 +242,9 @@ export const RealProducts = () => {
   );
 };
 
+// dispatch(
+//   addShoppingCartItem({
+//     ...item,
+//     total: item.price * item.quantity,
+//   })
+// );

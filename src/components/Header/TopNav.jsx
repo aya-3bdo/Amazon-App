@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../styling/topNav.css";
 import '../../logic/style-manipulation.js';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   HiOutlineLocationMarker,
-  HiOutlineSearch} from "react-icons/hi";
-
+  HiOutlineSearch
+} from "react-icons/hi";
+import {getShoppingCartItems, addShoppingCartItem} from "../../logic/Cart-slice.js"
 
 export const TopNav = () => {
-  const cart = useSelector((state) => state.shoppingCart.cartItems.length);
-
   /*  --- Resize select-menu width according to selected option  --- */
-
   $(function () {
     $("#option-width").html($("#select-menu option:selected").text());
     $("#select-menu").width($("#select-width").width());
@@ -24,6 +22,14 @@ export const TopNav = () => {
     });
   });
 
+  const {cartLength} = useSelector((state) => state.shoppingCart);
+  const dispatch = useDispatch()
+ 
+  useEffect(() => {
+    dispatch(getShoppingCartItems());
+    addShoppingCartItem()
+  }, [dispatch])
+ 
   return (
     < div className="TopStrip d-flex w-100">
 
@@ -275,7 +281,7 @@ export const TopNav = () => {
                 <div className="cart-img d-flex justify-content-center">
                   <img src="/src/assets/imgs/icons82-shopping-cart-64.png"></img>
                   <span className="cart-items position-absolute d-block ms-2">
-                    {cart}
+                    {cartLength}
                   </span>
                 </div>
               </NavLink>

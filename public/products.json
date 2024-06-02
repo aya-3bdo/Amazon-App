@@ -8,40 +8,33 @@
       "image": "../src/assets/imgs/realProduct1.jpg",
       "ratingOrder": 1,
       "initialValue": 3
-      
     },
-
     {
       "id": 2,
       "title": "Jack & Jones",
       "description": "Mens Organic Basic Short-sleeves O-Neck T-Shirt",
       "price": 432,
       "image": "../src/assets/imgs/realProduct4.jpg",
-       "ratingOrder": 3,
+      "ratingOrder": 3,
       "initialValue": 4
-      
     },
-
     {
       "id": 3,
       "title": "adidas",
       "description": "fluidflue 2.0 shoes running shoes for men",
       "price": 3599,
       "image": "../src/assets/imgs/realProduct5.jpg",
-       "ratingOrder": 5 ,
+      "ratingOrder": 5,
       "initialValue": 5
-      
     },
-
     {
       "id": 4,
       "title": "Tommy Hilfiger",
       "description": "  Watch for Men, Quartz Movement Analog Display. Blue silicon strap",
       "price": 4401,
       "image": "../src/assets/imgs/realProduct6.jpg",
-       "ratingOrder": 4,
+      "ratingOrder": 4,
       "initialValue": 4.5
-      
     },
     {
       "id": 5,
@@ -49,9 +42,8 @@
       "description": "calvin kelvin cK one for unisex, 100ml - eau de toilette",
       "price": 960,
       "image": "../src/assets/imgs/realProduct7.jpg",
-       "ratingOrder": 2 ,
+      "ratingOrder": 2,
       "initialValue": 3.5
-      
     },
     {
       "id": 6,
@@ -59,9 +51,8 @@
       "description": "LG vivace washing machine 9KG, with Ai dd technology, stone silver-LG thinQ",
       "price": 29900,
       "image": "../src/assets/imgs/realProduct8.jpg",
-       "ratingOrder": 1 ,
+      "ratingOrder": 1,
       "initialValue": 3
-      
     },
     {
       "id": 7,
@@ -69,9 +60,8 @@
       "description": "  microwave oven with Grill - mh8265dis''min, internationally warranty",
       "price": 7198,
       "image": "../src/assets/imgs/realProduct9.jpg",
-       "ratingOrder": 0 ,
+      "ratingOrder": 0,
       "initialValue": 2.5
-      
     },
     {
       "id": 8,
@@ -79,10 +69,9 @@
       "description": "A wireless bluetooth on-ear mic for phone call,",
       "price": 3061,
       "image": "../src/assets/imgs/realProduct10.jpg",
-       "ratingOrder": 4,
+      "ratingOrder": 4,
       "initialValue": 4.5
-      
     }
-  ]
+  ],
+  "ShoppingCartItems": []
 }
-
