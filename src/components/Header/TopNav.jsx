@@ -1,38 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "../../styling/topNav.css";
-import '../../logic/style-manipulation.js';
 import { useSelector, useDispatch } from "react-redux";
+import { HiOutlineLocationMarker, HiOutlineSearch } from "react-icons/hi";
 import {
-  HiOutlineLocationMarker,
-  HiOutlineSearch
-} from "react-icons/hi";
-import {getShoppingCartItems, addShoppingCartItem} from "../../logic/Cart-slice.js"
-
+  hanleResizingInput,
+  handleShowSignInSliceList,
+  handleHideSignInSliceList,
+  handleShowSelectWrapperStyle,
+  handleRemoveSelectWrapperStyle,
+  handleShowLangSliceList,
+  handleHideLangSliceList,
+} from "../../logic/Utils.js";
+import {
+  getShoppingCartItems,
+  addShoppingCartItem,
+} from "../../logic/Cart-slice.js";
 export const TopNav = () => {
-  /*  --- Resize select-menu width according to selected option  --- */
-  $(function () {
-    $("#option-width").html($("#select-menu option:selected").text());
-    $("#select-menu").width($("#select-width").width());
+  const { cartLength } = useSelector((state) => state.shoppingCart);
+  const dispatch = useDispatch();
 
-    $("#select-menu").on('change', function () {
-      $("#option-width").html($("#select-menu option:selected").text());
-      $(this).width($("#select-width").width()
-      );
-    });
-  });
-
-  const {cartLength} = useSelector((state) => state.shoppingCart);
-  const dispatch = useDispatch()
- 
   useEffect(() => {
     dispatch(getShoppingCartItems());
-    addShoppingCartItem()
-  }, [dispatch])
- 
-  return (
-    < div className="TopStrip d-flex w-100">
+    addShoppingCartItem();
+  }, [dispatch]);
 
+  // // Handle Resizing select-input
+  // const hanleResizingInput = () => {
+  //   const selectMenu = document.querySelector("#select-menu");
+  //   if (selectMenu.value.length < 4) {
+  //     selectMenu.style.width = `${selectMenu.value.length * 17}px`;
+  //   } else if (selectMenu.value.length < 7) {
+  //     selectMenu.style.width = `${selectMenu.value.length * 14.5}px`;
+  //   } else if (selectMenu.value.length <= 14) {
+  //     selectMenu.style.width = `${selectMenu.value.length * 11}px`;
+  //   } else if (selectMenu.value.length < 20) {
+  //     selectMenu.style.width = `${selectMenu.value.length * 10}px`;
+  //   } else if (selectMenu.value.length < 35) {
+  //     selectMenu.style.width = `${selectMenu.value.length * 8}px`;
+  //   }
+  // };
+  // Show style of select-wrapper
+
+  return (
+    <div className="TopStrip d-flex w-100">
       <nav className="navbar navbar-expand-lg top-strip w-100 px-md-0 d-flex flex-nowrap">
         {/*  ** ** ** ** ## ##  Top strip ## ## ** **  ** ** ** */}
 
@@ -40,13 +51,12 @@ export const TopNav = () => {
           {/*  ** ** ** Left section-- top strip  ** ** ** */}
 
           <div className="left-section-top-strip d-flex  justify-content-between ">
-            
             {/* Logo slice */}
             <div className="navLogo d-flex  justify-content-center">
-              <NavLink to={'/'} className=" d-block justify-content-center">
+              <NavLink to={"/"} className=" d-block justify-content-center">
                 <img
                   className="navImg"
-                  src="/src/assets/imgs/amazon-logo-white.png"
+                  src="/assets/imgs/amazon-logo-white.png"
                 ></img>
               </NavLink>
               <div className="logoText d-flex">
@@ -70,17 +80,19 @@ export const TopNav = () => {
 
           {/*  ** ** ** middle section-- top strip  ** ** ** */}
 
-          <div
-            className="middle-section-top-strip  pt-1 px-2 px-xlg-0"
-          >
-
+          <div className="middle-section-top-strip  pt-1 px-2 px-xlg-0">
             {/* select slice */}
-            
+
             <div className="left-side-search d-flex border-radius-3">
-              <div className="select-wrapper d-flex position-relative">
+              <div
+                className="select-wrapper d-flex position-relative"
+                onClick={() => handleShowSelectWrapperStyle()}
+                onBlur={() => handleRemoveSelectWrapperStyle()}
+              >
                 <select
                   id="select-menu"
                   className="resizeselect d-flex px-2  text-capitalize"
+                  onChange={() => hanleResizingInput()}
                 >
                   <option defaultValue>all</option>
                   <option>books</option>
@@ -99,7 +111,7 @@ export const TopNav = () => {
                 <span className="d-flex align-self-center mb-1  dropDown-icon pe-none">
                   <i className=" fa-solid fa-caret-down "></i>
                 </span>
-                <select
+                {/* <select
                   style={{
                     display: "none",
                     visibility: "hidden",
@@ -107,7 +119,7 @@ export const TopNav = () => {
                   id="select-width"
                 >
                   <option id="option-width"></option>
-                </select>
+                </select> */}
               </div>
             </div>
 
@@ -136,14 +148,16 @@ export const TopNav = () => {
           {/*  ** ** ** right section-- top strip  ** ** ** */}
 
           <div className="right-section-top-strip d-flex  align-items-end flex-nowrap  justify-content-between ">
-            
             {/*  Lang slices */}
 
-            <div className="lang-slice position-relative d-flex flex-row flex-nowrap align-items-end">
-                    <span id="dropDown-arrow"></span>
+            <div
+              onMouseOver={() => handleShowLangSliceList()}
+              onMouseLeave={() => handleHideLangSliceList()}
+              className="lang-slice position-relative d-flex flex-row flex-nowrap align-items-end"
+            >
+              <span id="dropDown-arrow"></span>
               <div id="flag-img">
-
-                <img src="/src/assets/imgs/icons8-egypt-48.png"></img>
+                <img src="/assets/imgs/icons8-egypt-48.png"></img>
               </div>
               <span className="text-uppercase  d-block lang">en</span>
               <div className="dropdown ms-0 d-flex vertical-align-bottom">
@@ -187,7 +201,7 @@ export const TopNav = () => {
                   <div className="dropdown-divider mx-auto"> </div>
                   <li className="d-block mx-3">
                     <img
-                      src="/src/assets/imgs/icons8-egypt-48.png"
+                      src="/assets/imgs/icons8-egypt-48.png"
                       id="dropDown-img"
                     ></img>
                     <div className="d-inline">
@@ -208,7 +222,11 @@ export const TopNav = () => {
 
             {/* Sign in slice */}
 
-            <div className="sign-in-slice position-relative ">
+            <div
+              className="sign-in-slice position-relative"
+              onMouseOver={() => handleShowSignInSliceList()}
+              onMouseLeave={() => handleHideSignInSliceList()}
+            >
               <div className="d-flex signIn-title pt-0">
                 {" "}
                 <span className="text-capitalize pe-1">hello, </span>sign in
@@ -233,11 +251,14 @@ export const TopNav = () => {
                   align-items-center lh-lg mt-3 position-relative"
                   >
                     <div className="btn  d-flex justify-content-center align-items-center">
-                     <NavLink to="/signin"> sign in</NavLink>
+                      <NavLink to="/signin"> sign in</NavLink>
                     </div>
                     <div className="new-customer">
                       new customer?
-                      <NavLink to="/createAccount" className="text-decoration-none ps-1">
+                      <NavLink
+                        to="/createAccount"
+                        className="text-decoration-none ps-1"
+                      >
                         start here.
                       </NavLink>
                     </div>
@@ -248,13 +269,10 @@ export const TopNav = () => {
                   <div className="row d-flex flex-nowrap ">
                     <div className="col-5 left-side ms-3 lh-lg">
                       <span className="d-block">your lists</span>
-                      <div className="d-block">
-                        {" "}
-                        Create a List
-                      </div>
+                      <div className="d-block"> Create a List</div>
                     </div>
                     <div className="col-7 ms-0">
-                      <ul >
+                      <ul>
                         <li className="list-header">your account</li>
                         <li>your account</li>
                         <li>your orders</li>
@@ -279,7 +297,7 @@ export const TopNav = () => {
             <div className="cart-slice d-flex flex-row position relative p-1 ">
               <NavLink to="ShoppingCart" className="text-decoration-none">
                 <div className="cart-img d-flex justify-content-center">
-                  <img src="/src/assets/imgs/icons82-shopping-cart-64.png"></img>
+                  <img src="/assets/imgs/icons82-shopping-cart-64.png"></img>
                   <span className="cart-items position-absolute d-block ms-2">
                     {cartLength}
                   </span>
@@ -291,7 +309,6 @@ export const TopNav = () => {
         </div>
         {/*  ** ** ** ** ## ##  Bottom strip ## ## ** **  ** ** ** */}
       </nav>
-
     </div>
   );
 };

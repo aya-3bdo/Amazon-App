@@ -16,7 +16,7 @@
 }
 
 .signin-parent .signin-logo-container > a {
-	background-image: url(../assets/imgs/amazon-logo-black.png);
+	background-image: url(/assets/imgs/amazon-logo-black.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 	background-position:-5px -130px;

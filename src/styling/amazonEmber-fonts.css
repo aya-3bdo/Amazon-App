@@ -2,17 +2,17 @@
 
 @font-face {
   font-family: "AmazonEmber_Bd";
-  src: url(/src/assets/fonts/emberFont/AmazonEmber_Bd.ttf) format("truetype");
+  src: url(/assets/fonts/emberFont/AmazonEmber_Bd.jar) format("truetype");
 }
 
 @font-face {
   font-family: "AmazonEmber_Rg";
-  src: url(/src/assets/fonts/emberFont/AmazonEmber_Rg.ttf) format("truetype");
+  src: url(/assets/fonts/emberFont/AmazonEmber_Rg.jar) format("truetype");
 }
 
 @font-face {
   font-family: "AmazonEmber_RgIt";
-  src: url(/src/assets/fonts/emberFont/AmazonEmber_RgIt.ttf) format("truetype");
+  src: url(/assets/fonts/emberFont/AmazonEmber_RgIt.jar) format("truetype");
 }
 
 

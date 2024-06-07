@@ -274,7 +274,7 @@ line-height: 1.6rem;
   display: block;
   background-position: -10px -170px;
   /* background-image: url(https://m.media-amazon.com/images/S/sash/vfqcwUkuArEiwD2.png); */
-  background-image: url(/src/assets/imgs/AmazonBtn.png);
+  background-image: url(/assets/imgs/AmazonBtn.png);
 }
 
 .middle-carousels-container div.middleContainer-divider a.button span{

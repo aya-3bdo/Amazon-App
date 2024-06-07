@@ -1,0 +1,63 @@
+@import "../styling/amazonEmber-fonts.css";
+@import "../styling/colors.css";
+
+
+div#error-page{
+	font-family: var(AmazonEmber_Rg);
+	color: var(--black-text-100);
+}
+
+div#error-page div.error-content h4:first-child{
+	color: hsl(30, 86%, 48%);
+	font-size: 1.05rem;
+	margin: 0;
+	padding: 0;
+	margin-bottom:-2px ;
+	
+}
+
+div#error-page div.error-content p:nth-child(2){
+		margin: 0;
+	padding: 0;
+	
+}
+
+div#error-page div.error-content div:nth-child(3){
+position: relative;
+  left: -7.4%;
+  top: -20px;
+}
+
+div#error-page div.error-content div:nth-child(3) img{
+  width: 43px;
+
+}
+
+div#error-page div.error-content div.last-line h6 span {
+	color: hsl(30, 100%, 40%);
+	margin-right: 5px;
+	font-size: 0.9rem;
+	position: relative;
+	bottom: 1px;
+}
+
+div#error-page div.error-content div.last-line h6 {
+	font-family: var(--AmazonEmber_Bd);
+	
+}
+
+div#error-page div.error-content div.last-line h6 a,
+div#error-page div.error-content div.last-line h6 a:active
+{
+	color: #FF9933;
+	text-decoration: underline;
+
+}
+
+div#error-page div.error-content div.last-line h6 a:hover,
+div#error-page div.error-content div.last-line h6 a:visited{
+	color: #996633;
+	font-weight: 900;
+	text-decoration: underline;
+
+}

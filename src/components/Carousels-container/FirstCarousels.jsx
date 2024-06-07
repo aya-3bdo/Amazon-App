@@ -15,7 +15,7 @@ export default function FirstCarousels() {
                 </p>
                 <div className = "img-container">
                 <img
-                  src="/src/assets/imgs/2sec-cols-row1-1.jpg"
+                  src="/assets/imgs/2sec-cols-row1-1.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                 />
@@ -31,7 +31,7 @@ export default function FirstCarousels() {
                 <p className="card-text pb-3 ">Headphones | below 650EGP</p>
                 <div className = "img-container">
                 <img
-                  src="/src/assets/imgs/2sec-cols-row1-2.jpg"
+                  src="/assets/imgs/2sec-cols-row1-2.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                 />
@@ -47,7 +47,7 @@ export default function FirstCarousels() {
                 <div className = "img-container">
                
               <img
-                  src="/src/assets/imgs/2sec-cols-row1-3.jpg"
+                  src="/assets/imgs/2sec-cols-row1-3.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                 />
@@ -66,7 +66,7 @@ export default function FirstCarousels() {
                 <div className = "img-container">
               
                 <img
-                  src="/src/assets/imgs/2sec-cols-row1-4.jpg"
+                  src="/assets/imgs/2sec-cols-row1-4.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                   />
@@ -93,7 +93,7 @@ export default function FirstCarousels() {
                   <div className="row1 d-flex">
                     <div className="fir-description me-1">
                       <img
-                        src="/src/assets/imgs/2sec-cols6-row2-Ele5-4.jpg"
+                        src="/assets/imgs/2sec-cols6-row2-Ele5-4.jpg"
                         className="card-img-top img-fluid "
                         alt="..."
                       />
@@ -101,7 +101,7 @@ export default function FirstCarousels() {
                     </div>
                     <div className="sec-description">
                       <img
-                        src="/src/assets/imgs/2sec-cols6-row2-Ele5-2.jpg"
+                        src="/assets/imgs/2sec-cols6-row2-Ele5-2.jpg"
                         className="card-img-top img-fluid "
                         alt="..."
                       />
@@ -113,7 +113,7 @@ export default function FirstCarousels() {
                   <div className="row2 d-flex ">
                     <div className="third-description me-1">
                       <img
-                        src="/src/assets/imgs/2sec-cols6-row2-Ele5-3.jpg"
+                        src="/assets/imgs/2sec-cols6-row2-Ele5-3.jpg"
                         className="card-img-top img-fluid "
                         alt="..."
                       />
@@ -122,7 +122,7 @@ export default function FirstCarousels() {
 
                     <div className="fourth-description">
                       <img
-                        src="/src/assets/imgs/2sec-cols6-row2-Ele5-1.jpg"
+                        src="/assets/imgs/2sec-cols6-row2-Ele5-1.jpg"
                         className="card-img-top img-fluid "
                         alt="..."
                       />
@@ -146,7 +146,7 @@ export default function FirstCarousels() {
               <div className="img-container">
 
                 <img
-                  src="/src/assets/imgs/2sec-cols6-row2-Ele6.jpg"
+                  src="/assets/imgs/2sec-cols6-row2-Ele6.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                 />
@@ -165,7 +165,7 @@ export default function FirstCarousels() {
               </p>
               <div className='img-container '>
                 <img
-                  src="/src/assets/imgs/2sec-cols6-row2-Ele7.jpg"
+                  src="/assets/imgs/2sec-cols6-row2-Ele7.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                 />
@@ -181,7 +181,7 @@ export default function FirstCarousels() {
               <div className='img-container '>
               
                 <img
-                  src="/src/assets/imgs/2sec-cols6-row2-Ele8.jpg"
+                  src="/assets/imgs/2sec-cols6-row2-Ele8.jpg"
                   className="card-img-top img-fluid"
                   alt="..."
                 />

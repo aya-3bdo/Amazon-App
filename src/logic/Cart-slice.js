@@ -31,13 +31,13 @@ export const getShoppingCartItems = createAsyncThunk(
 
 export const addShoppingCartItem = createAsyncThunk(
   "cart/addShoppingCartItem",
-  async ({item}, thunkAPI) => {
+  async (item, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
       const res = await axios.post(`http://localhost:3001/ShoppingCartItems/`, {
         ...item,
         quantity: 1,
-        total: +item.price
+        total: item.price,
       });
       const data = await res.data;
       return data;

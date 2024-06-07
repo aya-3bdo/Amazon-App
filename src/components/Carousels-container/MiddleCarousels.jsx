@@ -37,16 +37,16 @@ export default function MiddleCarousels() {
           <MdOutlineKeyboardArrowRight />
         </span>
         <Slider {...settings} className="py-4">
-          <img src="/src/assets/imgs/4four-carousel-1.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-2.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-3.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-4.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-5.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-6.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-7.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-8.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-9.jpg" />
-          <img src="/src/assets/imgs/4four-carousel-10.jpg" />
+          <img src="/assets/imgs/4four-carousel-1.jpg" />
+          <img src="/assets/imgs/4four-carousel-2.jpg" />
+          <img src="/assets/imgs/4four-carousel-3.jpg" />
+          <img src="/assets/imgs/4four-carousel-4.jpg" />
+          <img src="/assets/imgs/4four-carousel-5.jpg" />
+          <img src="/assets/imgs/4four-carousel-6.jpg" />
+          <img src="/assets/imgs/4four-carousel-7.jpg" />
+          <img src="/assets/imgs/4four-carousel-8.jpg" />
+          <img src="/assets/imgs/4four-carousel-9.jpg" />
+          <img src="/assets/imgs/4four-carousel-10.jpg" />
         </Slider>
       </div>
 
@@ -63,17 +63,17 @@ export default function MiddleCarousels() {
           <MdOutlineKeyboardArrowRight />
         </span>
         <Slider {...settings} className=" py-1 ">
-          <img src="/src/assets/imgs/3thir-carousel-1.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-2.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-3.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-4.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-5.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-6.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-7.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-8.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-9.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-10.jpg" />
-          <img src="/src/assets/imgs/3thir-carousel-11.jpg" />
+          <img src="/assets/imgs/3thir-carousel-1.jpg" />
+          <img src="/assets/imgs/3thir-carousel-2.jpg" />
+          <img src="/assets/imgs/3thir-carousel-3.jpg" />
+          <img src="/assets/imgs/3thir-carousel-4.jpg" />
+          <img src="/assets/imgs/3thir-carousel-5.jpg" />
+          <img src="/assets/imgs/3thir-carousel-6.jpg" />
+          <img src="/assets/imgs/3thir-carousel-7.jpg" />
+          <img src="/assets/imgs/3thir-carousel-8.jpg" />
+          <img src="/assets/imgs/3thir-carousel-9.jpg" />
+          <img src="/assets/imgs/3thir-carousel-10.jpg" />
+          <img src="/assets/imgs/3thir-carousel-11.jpg" />
         </Slider>
       </div>
 

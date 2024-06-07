@@ -145,15 +145,15 @@ export const RealProducts = () => {
 
   const {
     data: allProducts = [],
-    isLoading: allProducts_isLoading,
     isSuccess: allProducts_isSuccesss,
   } = useGetAllProductsQuery();
 
-  //  Handle dispatching Add Item action
-  const handleDispatchAddItem = (item) => {
+ //  Handle dispatching Add Item action
+ const handleDispatchAddItem = (item) => {
+	 
     dispatch(
       addShoppingCartItem({
-        item,
+        ...item
       })
     )
       .unwrap()
@@ -241,10 +241,3 @@ export const RealProducts = () => {
     </>
   );
 };
-
-// dispatch(
-//   addShoppingCartItem({
-//     ...item,
-//     total: item.price * item.quantity,
-//   })
-// );

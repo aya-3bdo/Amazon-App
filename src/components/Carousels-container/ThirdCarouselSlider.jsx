@@ -44,7 +44,7 @@ export const ThirdCarouselSlider = () => {
         </span>
         <Slider {...settings} className="py-2 ">
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-1.jpg" />
+            <img src="/assets/imgs/4th-carousel-1.jpg" />
             <div className="describtion">
               <span className="me-1">Up to 15% off</span>
               <strong> Deal</strong>
@@ -52,7 +52,7 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-2.jpg" />
+            <img src="/assets/imgs/4th-carousel-2.jpg" />
             <div className="describtion">
               <span className="me-1"> Up to 13% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -63,7 +63,7 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-3.jpg" />
+            <img src="/assets/imgs/4th-carousel-3.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -71,21 +71,21 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-4.jpg" />
+            <img src="/assets/imgs/4th-carousel-4.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong> <span>Adidas Football Shoes</span>
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-5.jpg" />
+            <img src="/assets/imgs/4th-carousel-5.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong> <span>buy now and save</span>
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-6.jpg" />
+            <img src="/assets/imgs/4th-carousel-6.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -95,7 +95,7 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-7.jpg" />
+            <img src="/assets/imgs/4th-carousel-7.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -103,14 +103,14 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-8.jpg" />
+            <img src="/assets/imgs/4th-carousel-8.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong> <span>JBL Tune510 headphones Black </span>
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-9.jpg" />
+            <img src="/assets/imgs/4th-carousel-9.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -118,7 +118,7 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-10.jpg" />
+            <img src="/assets/imgs/4th-carousel-10.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -128,7 +128,7 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-11.jpg" />
+            <img src="/assets/imgs/4th-carousel-11.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong>{" "}
@@ -136,7 +136,7 @@ export const ThirdCarouselSlider = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src="/src/assets/imgs/4th-carousel-12.jpg" />
+            <img src="/assets/imgs/4th-carousel-12.jpg" />
             <div className="describtion">
               <span className="me-1"> up to 15% off </span>{" "}
               <strong> Deal</strong> <span>Save on Casio Watches</span>

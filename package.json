@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite & json-server -w ./public/products.json --port 3001",
+    "dev": "vite",
+    "start": "json-server -w products.json --port 3001",
     "build": "vite build",
     "preview": "vite preview"
   },

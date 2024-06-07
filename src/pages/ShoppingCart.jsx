@@ -10,28 +10,8 @@ import {
 } from "../logic/Cart-slice";
 
 const ShoppingCart = () => {
-  $(function () {
-    $("li.option").on("click", function () {
-      if ($(this).text() == "10+") {
-        $(this).parents("ul.options-list").css("display", "none");
-        $(this)
-          .parents("ul.options-list")
-          .siblings("div.inputText")
-          .css("display", "none");
-        $(this)
-          .parents("ul.options-list")
-          .parents("div.select-menu")
-          .siblings("span#update")
-          .show();
-        $(this).parents("ul.options-list").siblings("div.enterQty").show();
-      }
-    });
-  });
-
   const dispatch = useDispatch();
-  const { shCartItems = []} = useSelector(
-    (state) => state.shoppingCart
-  );
+  const { shCartItems = [] } = useSelector((state) => state.shoppingCart);
 
   function totalItemsPrice() {
     let cartTotal = 0;
@@ -65,6 +45,19 @@ const ShoppingCart = () => {
   const handleSelectValue = (event) => {
     event.target.parentElement.previousElementSibling.previousElementSibling.children[1].value =
       event.target.innerText;
+  };
+
+  // Handle Showing update input to add items quantity above 10.
+  const handleUpdateInput = (e) => {
+    const liTarget = e.target;
+
+    liTarget.parentElement.previousElementSibling.style.display = "none";
+    liTarget.parentElement.previousElementSibling.previousElementSibling.style.display =
+      "none";
+    liTarget.parentElement.previousElementSibling.children[0].parentElement.style.display =
+      "block";
+    liTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.style.display =
+      "block";
   };
 
   getItemsAmount();
@@ -139,7 +132,7 @@ const ShoppingCart = () => {
         <div className="shopping-cart-container m-0 p-1 pe-0 pb-0">
           {shCartItems?.length < 1 ? (
             <div className="empty-shopping-cart fir-slice">
-              <img src="../../src/assets/imgs/Shopping-cart.svg" />
+              <img src="/assets/imgs/Shopping-cart.svg" />
               <div className="right-content">
                 <h5>Your Amazon cart is empty </h5>
                 <Link>Shop today's deals </Link>
@@ -211,15 +204,6 @@ const ShoppingCart = () => {
                                   <li
                                     className="delete-option"
                                     onClick={() => {
-                                      // dispatch(deleteShoppingCartItem(item.id))
-                                      //   .unwrap()
-                                      //   .catch(
-                                      //     (rejectedValueOrSerializedError) => {
-                                      //       window.alert(
-                                      //         `Something went wrong, ${rejectedValueOrSerializedError}.`
-                                      //       );
-                                      //     }
-                                      //   );
                                       handleDispatchDeleteItem(item);
                                       getItemsAmount();
                                     }}
@@ -331,6 +315,7 @@ const ShoppingCart = () => {
                                       e.target.parentElement.classList.remove(
                                         "show"
                                       );
+                                      handleUpdateInput(e);
                                     }}
                                   >
                                     10+
@@ -352,13 +337,6 @@ const ShoppingCart = () => {
                           <span className="separator">|</span>
                           <span
                             onClick={() => {
-                              // dispatch(deleteShoppingCartItem(item.id))
-                              //   .unwrap()
-                              //   .catch((rejectedValueOrSerializedError) => {
-                              //     window.alert(
-                              //       `Something went wrong, ${rejectedValueOrSerializedError}.`
-                              //     );
-                              //   });
                               handleDispatchDeleteItem(item);
                               totalItemsPrice();
                             }}

@@ -22,7 +22,6 @@ div.footer-container {
   max-height: 66dvh;
   min-width: 1200px;
   height: 100%;
-  /* overflow-x: scroll; */
 }
 
 /*  ------------------------------------------- First section ------------------------------------------- */
@@ -120,7 +119,7 @@ div.footer-container .fir-section .Footer-divider{
 /*  -- -- -- -- -- -- -- --  Lang slice  -- -- -- -- -- -- -- --  */
 
 div.footer-container .fir-section .third-row .nav-logo-base {
-  background-image: url(/src/assets/imgs/AmazoneFooterLogo.png);
+  background-image: url(/assets/imgs/AmazoneFooterLogo.png);
   background-position: -10px -90px;
   width: 76px;
   height: 23px;
@@ -182,12 +181,12 @@ div.footer-container .fir-section .third-row .nav-logo-base {
 .footer-lang-slice .dropdown-menu {
   width: 13.4em;
   height: 11.2em;
- 
 }
 
 .footer-lang-slice .dropdown{
  bottom: -5px;
  left: 16px;
+
 }
 
 
@@ -307,7 +306,7 @@ div.lang-country-container div.select-lang div.footer-lang-slice  #footer-dropDo
 
 
 .third-row div.footer-country a > span:first-child {
-  background-image: url(/src/assets/imgs/Egypt-flag.png);
+  background-image: url(/assets/imgs/Egypt-flag.png);
   background-position: -72px -96px;
 top: 1px;
 display: inline-block;

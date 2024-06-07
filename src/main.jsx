@@ -5,14 +5,13 @@ import RootLayout from "./components/RootLayout";
 import ErrorPage from "./pages/ErrorPage";
 import ShoppingCart from "./pages/ShoppingCart";
 import Products from "./components/Products";
-import '../src/index.css';
+import "../src/index.css";
 import { UserLayout } from "./components/User/UserLayout";
 import { UserSignin } from "./components/User/UserSignin";
 import { UserCreateAccount } from "./components/User/UserCreateAccount";
 import { CartLayout } from "./components/CartLayout";
 import { Provider } from "react-redux";
 import { store } from "./logic/store";
-
 
 const router = createBrowserRouter([
   //  Main Layout.
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Products />,
-      } 
+      },
     ],
   },
 
@@ -35,12 +34,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "signin",
-        element: <UserSignin />
+        element: <UserSignin />,
       },
-    {  path: "createAccount",
-      element: <UserCreateAccount />
-    }
-    ]
+      { path: "createAccount", element: <UserCreateAccount /> },
+    ],
   },
 
   //  Cart Layout.
@@ -49,18 +46,17 @@ const router = createBrowserRouter([
     element: <CartLayout />,
     children: [
       {
-          path: "ShoppingCart",
-        element: <ShoppingCart />
-      }
-    ]
- },
-
+        path: "ShoppingCart",
+        element: <ShoppingCart />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Provider store={store}>
-    <RouterProvider router = {router} />
-    </Provider>
-   </React.StrictMode> 
+  // <React.StrictMode>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+  //  {/* </React.StrictMode>  */}
 );

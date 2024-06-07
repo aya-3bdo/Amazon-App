@@ -18,7 +18,7 @@
 }
 
 .create-account-parent .createAccount-logo-container > a {
-	background-image: url(../assets/imgs/amazon-logo-black.png);
+	background-image: url(/assets/imgs/amazon-logo-black.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 	background-position:-5px -130px;
@@ -112,7 +112,7 @@ border: 1px solid hsl(48, 100%, 47%);
 
 .create-account-parent .form-container form > span:first-of-type > span.alert{
 display: inline-block;
-background-image: url(../assets/imgs/amazon-logo-black.png);
+background-image: url(/assets/imgs/amazon-logo-black.png);
 background-repeat: no-repeat;
 background-position: -165px -130px;
 background-size: 430px  770px;

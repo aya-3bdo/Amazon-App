@@ -20,7 +20,6 @@
 /* #######  left section -- top strip ######## */
 
 .left-section-top-strip {
-  /* max-width: 25%; */
   max-height: 70% !important;
 }
 
@@ -93,9 +92,8 @@ min-width: 40vw;
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  display: none;  
- 
-
+  display: none;
+  width: 55px;
 }
 
 #select-menu:hover {
@@ -110,18 +108,7 @@ min-width: 40vw;
   bottom: 3px;
   cursor: pointer;
   padding-right: 4px;
-/* margin-left: 10px; */
-
 }
-
-/* .select-wrapper:hover {
-  cursor: pointer !important;
-  border: 3px solid #f90;
-  height: 93%;
-  top: 1%;
-  z-index: 3;
-
-} */
 
 .select-wrapper:hover {
   background: #d4d4d4;
@@ -169,10 +156,10 @@ min-width: 40vw;
   margin-right: 2px;
 }
 
-/* .select-wrapper select:hover {
+.select-wrapper select:hover {
   color: #0f1111 !important;
 
-} */
+}
 
 /*-----------------------------------  search slice -----------------------------------*/
 

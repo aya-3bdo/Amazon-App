@@ -3,24 +3,12 @@ import "../styling/footer.css";
 import { Link, NavLink } from "react-router-dom";
 import { BsGlobe } from "react-icons/bs";
 import { MdOutlineArrowDropUp } from "react-icons/md";
+import {
+  handleShowFooterLangMenu,
+  handleHideFooterLangMenu,
+} from "../logic/Utils";
 
 const Footer = () => {
-
-  $(function () {
-    $(' .select-lang').on('mouseover', () => {
-      $('#footer-dropDown-arrow').show();
-      $('.dropdown-menu ').show();
-  }
-    ),
-    
-      $(' .select-lang').on('mouseleave', () => {
-        $('#footer-dropDown-arrow').hide();
-        $('.dropdown-menu ').hide();
-  }
-      )
-
-  })
-
   return (
     <div className="footer-container d-flex flex-column">
       <section className="fir-section">
@@ -102,9 +90,13 @@ const Footer = () => {
             <div className="nav-logo-base me-5"></div>
           </Link>
           <div className="lang-country-container ms-5 d-flex mb-3">
-            <div className="select-lang  me-2">
-              <div className=" footer-lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end ">
-                      <span id="footer-dropDown-arrow"></span>
+            <div
+              className="select-lang me-2"
+              onMouseOver={() => handleShowFooterLangMenu()}
+              onMouseLeave={() => handleHideFooterLangMenu()}
+            >
+              <div className=" footer-lang-slice position-relative p-2 ps-1 me-1 d-flex flex-row flex-nowrap align-items-end">
+                <span id="footer-dropDown-arrow"></span>
 
                 <div id="globe-lang">
                   <BsGlobe />
@@ -114,7 +106,7 @@ const Footer = () => {
                 </span>
                 <div className="dropdown ms-0 d-flex vertical-align-bottom position-relative">
                   <button
-                    className="btn  dropdown-toggle d-flex "
+                    className="btn dropdown-toggle d-flex "
                     type="button"
                     id="dropdownMenuButton1"
                     data-bs-toggle="dropdown"
@@ -162,7 +154,7 @@ const Footer = () => {
                     <div className="dropdown-divider mx-auto"> </div>
                     <li className="d-block mx-3">
                       <img
-                        src="/src/assets/imgs/icons8-egypt-48.png"
+                        src="/assets/imgs/icons8-egypt-48.png"
                         id="dropDown-img"
                       ></img>
                       <div className="d-inline">
@@ -197,7 +189,8 @@ const Footer = () => {
             <Link className="col-2">
               <span className="first-link">
                 <span className="d-block">Amazon</span>
-                Advertising</span>
+                Advertising
+              </span>
               <span>Find, attract, and engage customers</span>
             </Link>
             <Link className="col-2">
@@ -241,11 +234,12 @@ const Footer = () => {
 
           <div className="last-div text-center">
             <span className="me-2 pe-1">Conditions of Use & Sale</span>
-            <span className="me-2 pe-1">
-              Privacy Notice
+            <span className="me-2 pe-1">Privacy Notice</span>
+            <span> Interest-Based Ads</span>
+            <span id="copyright" className="d-block">
+              {" "}
+              ©1996&#727;2023, Amazon.com, Inc. or its affiliates
             </span>
-             <span> Interest-Based Ads</span>
-           <span id="copyright" className="d-block"> ©1996&#727;2023, Amazon.com, Inc. or its affiliates</span>
           </div>
         </div>
       </section>
