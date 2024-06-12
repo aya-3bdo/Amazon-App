@@ -1,0 +1,65 @@
+/*import  Amazon Ember fonts */
+@import './amazonEmber-fonts.css';
+
+.BottomStrip{
+	background: #232F3E;
+	height: 30%!important;
+	display: flex;
+}
+
+.BottomStrip *{
+	box-sizing: border-box;
+
+}
+.BottomStrip .navbar{
+	max-height: 40px;
+	margin-block: -4px 6px;
+}
+
+.BottomStrip .navbar li:not(li:first-child){
+	margin-left: -8px;
+}
+
+.BottomStrip .navbar li a{
+	color: hsl(0, 0%, 100%);
+	font-size: 0.799rem;
+	font-family: var(--regular-font);
+  white-space: nowrap;
+	padding-inline: 4px 9px;
+	margin-bottom: 1px;
+	margin-top: 8px;
+	padding-bottom: 7px;
+	border: 1px solid transparent;
+	margin-inline: 4px;
+}
+
+
+.BottomStrip .navbar li a:hover{
+	border: 1px solid var(--white-100);
+
+}
+
+
+
+.BottomStrip .navbar ul > li:first-child a{
+	font-size: 0.87rem;
+	padding-block: 1px 6px;
+	margin-block: 5px -6px;
+	word-spacing: -3px;
+	font-family: var(--bold-font);
+
+}
+
+.BottomStrip .navbar ul > li:first-child {
+height: 39px;
+margin-bottom: 7px;
+margin-right: 0px;
+}
+
+.BottomStrip .navbar ul > li:first-child > a > h6:only-child{
+	display: inline-block;
+	color: var(--white-100);
+}
+
+
+

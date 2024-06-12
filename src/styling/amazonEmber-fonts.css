@@ -1,0 +1,23 @@
+/*  Amazon Ember fonts */
+
+@font-face {
+  font-family: "AmazonEmber_Bd";
+  src: url(/src/assets/fonts/emberFont/AmazonEmber_Bd.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "AmazonEmber_Rg";
+  src: url(/src/assets/fonts/emberFont/AmazonEmber_Rg.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "AmazonEmber_RgIt";
+  src: url(/src/assets/fonts/emberFont/AmazonEmber_RgIt.ttf) format("truetype");
+}
+
+
+:root {
+  --regular-font: "AmazonEmber_Rg", sans-serif, serif;
+  --regularIt-font: "AmazonEmber_RgIt", sans-serif, serif;
+  --bold-font: "AmazonEmber_Bd", sans-serif, serif;
+}

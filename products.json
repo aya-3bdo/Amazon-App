@@ -1,0 +1,87 @@
+{
+    "products": [
+    {
+      "id": 1,
+      "title": "iPhone 14 Pro Max",
+      "description": "New apple iphone 14 pro Max 256GB, space black, bluetooth,wi-fi",
+      "price": "52,69",
+      "image": "../src/assets/imgs/realProduct1.jpg",
+      "ratingOrder": 1,
+      "initialValue": 3,
+      "quantity": 1
+    },
+
+    {
+      "id": 2,
+      "title": "Jack & Jones",
+      "description": "Mens Organic Basic Short-sleeves O-Neck T-Shirt",
+      "price": "432",
+      "image": "../src/assets/imgs/realProduct4.jpg",
+       "ratingOrder": 3,
+      "initialValue": 4,
+      "quantity": 1
+    },
+
+    {
+      "id": 3,
+      "title": "adidas",
+      "description": "fluidflue 2.0 shoes running shoes for men",
+      "price": "3,599",
+      "image": "../src/assets/imgs/realProduct5.jpg",
+       "ratingOrder": 5 ,
+      "initialValue": 5,
+      "quantity": 1
+    },
+
+    {
+      "id": 4,
+      "title": "Tommy Hilfiger",
+      "description": "  Watch for Men, Quartz Movement Analog Display. Blue silicon strap",
+      "price": "4,401",
+      "image": "../src/assets/imgs/realProduct6.jpg",
+       "ratingOrder": 4,
+      "initialValue": 4.5,
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "title": "calvin kelvin cK",
+      "description": "calvin kelvin cK one for unisex, 100ml - eau de toilette",
+      "price": "960",
+      "image": "../src/assets/imgs/realProduct7.jpg",
+       "ratingOrder": 2 ,
+      "initialValue": 3.5,
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "title": "LG vivace washing machine",
+      "description": "LG vivace washing machine 9KG, with Ai dd technology, stone silver-LG thinQ",
+      "price": "29,900",
+      "image": "../src/assets/imgs/realProduct8.jpg",
+       "ratingOrder": 1 ,
+      "initialValue": 3,
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "title": "LG 42 litres microwave oven",
+      "description": "  microwave oven with Grill - mh8265dis''min, internationally warranty",
+      "price": "7,198",
+      "image": "../src/assets/imgs/realProduct9.jpg",
+       "ratingOrder": 0 ,
+      "initialValue": 2.5,
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "title": "sony wh-ch517",
+      "description": "A wireless bluetooth on-ear mic for phone call,",
+      "price": "3,061",
+      "image": "../src/assets/imgs/realProduct10.jpg",
+       "ratingOrder": 4,
+      "initialValue": 4.5,
+      "quantity": 1
+    }
+  ]
+}
