@@ -3,12 +3,13 @@
 
 
 .middle-carousels-container {
-  min-width: 1400px;
+   min-width: 1400px;
+  width: 1408px;
   cursor: pointer;
   position: absolute;
   top: 69%;
-    left: 13.3%;
-  right: 13.3%;
+    left: 2%;
+  right: 2%;
 margin-inline: auto;
 font-family: var(AmazonEmber_Rg);
 /* background: var(--white-100); */
