@@ -4,9 +4,10 @@
 ## Description
 
 This is a React-based web application that serves as a clone of Amazon website. The project focuses on replicating the header, footer, main carousel, and product carousels of Amazon website. The primary focus of this project is the shopping cart functionality, which has been implemented in two different ways using Redux Toolkit 
-(RTK): 
-  - **Synchronous** cart management using JSON-server API **only** for fetching products. While localStorage was used to save the Shopping cart items.
-  - **Asynchronous** cart management using JSON Server API for fetching products and save Shopping cart items, simulating real-world backend integration.
+(RTK) in two different versions: 
+
+  - **Synchronous** cart management using JSON-server API **only** for fetching products. While localStorage was used to save the Shopping cart items.`this branch`
+  - **Asynchronous** cart management using JSON Server API for fetching products and save Shopping cart items, simulating real-world backend integration. *`which is available in`* [AsyncThunkMigration branch](https://github.com/aya-3bdo/Amazon-App/tree/AsyncThunkMigration)
     
 ## Features
 
