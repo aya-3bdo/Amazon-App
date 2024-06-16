@@ -25,23 +25,6 @@ export const TopNav = () => {
     addShoppingCartItem();
   }, [dispatch]);
 
-  // // Handle Resizing select-input
-  // const hanleResizingInput = () => {
-  //   const selectMenu = document.querySelector("#select-menu");
-  //   if (selectMenu.value.length < 4) {
-  //     selectMenu.style.width = `${selectMenu.value.length * 17}px`;
-  //   } else if (selectMenu.value.length < 7) {
-  //     selectMenu.style.width = `${selectMenu.value.length * 14.5}px`;
-  //   } else if (selectMenu.value.length <= 14) {
-  //     selectMenu.style.width = `${selectMenu.value.length * 11}px`;
-  //   } else if (selectMenu.value.length < 20) {
-  //     selectMenu.style.width = `${selectMenu.value.length * 10}px`;
-  //   } else if (selectMenu.value.length < 35) {
-  //     selectMenu.style.width = `${selectMenu.value.length * 8}px`;
-  //   }
-  // };
-  // Show style of select-wrapper
-
   return (
     <div className="TopStrip d-flex w-100">
       <nav className="navbar navbar-expand-lg top-strip w-100 px-md-0 d-flex flex-nowrap">
