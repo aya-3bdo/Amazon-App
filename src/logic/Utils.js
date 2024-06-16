@@ -35,7 +35,7 @@ export const handleShowSelectWrapperStyle = () => {
   selectWrapper.style.cssText = `
      cursor: pointer !important;
   border: 3px solid #f90;
-   height: 93%;
+   height: 92%;
   top: 1%;
   z-index: 3;
     `;
