@@ -35,7 +35,7 @@ This is a React-based web application that serves as a clone of Amazon website. 
 
 - Clone the repository:
 
-    `git clone -b LocalStorage-version https://github.com/aya-3bdo/Amazon-App.git`
+    `git clone -b LocalStorage-main-version https://github.com/aya-3bdo/Amazon-App.git`
 
 ### Install Instructions:
 
