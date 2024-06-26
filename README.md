@@ -55,5 +55,5 @@ The enhanced version of the project has been deployed to Netlify and can be acce
 ## Contact
  **For any questions or feedback, please feel free to reach out to me:**
 
-   - Email: aya.abdelghany996@gmail.com 
+   - Email: ayaa.abdo96@gmail.com 
 
