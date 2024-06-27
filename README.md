@@ -49,7 +49,7 @@ This is a React-based web application that serves as a clone of Amazon website. 
 
 ## Deployment
 
-The enhanced version of the project has been deployed to Netlify and can be accessed at the following URL: [Amazon app](https://.netlify.app)
+The enhanced version of the project has been deployed to Netlify and can be accessed at the following URL: [Amazon app](https://amazon-web-app-cl.netlify.app)
 
 
 ## Contact
